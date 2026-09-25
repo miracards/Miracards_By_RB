@@ -3,7 +3,7 @@ import connectDB from "@/lib/mongodb";
 import Inquiry from "@/lib/models/Inquiry";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 
 export async function POST(req: NextRequest) {
   const body = await req.json();
@@ -36,7 +36,7 @@ export async function POST(req: NextRequest) {
 
   // Notify admin via email
   try {
-    await resend.emails.send({
+    if (resend) await resend.emails.send({
       from: `Mira Cards Website <${process.env.ADMIN_EMAIL}>`,
       to: process.env.ADMIN_EMAIL!,
       subject: `New Inquiry from ${name} — ${collectionInterest || "General"}`,
