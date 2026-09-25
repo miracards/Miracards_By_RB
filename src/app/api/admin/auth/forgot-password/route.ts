@@ -5,11 +5,12 @@ import connectDB from "@/lib/mongodb";
 import Admin from "@/lib/models/Admin";
 import PasswordResetToken from "@/lib/models/PasswordResetToken";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KEY) : null;
 
 export async function POST(req: NextRequest) {
   const { email } = await req.json();
   if (!email) return NextResponse.json({ error: "Email is required" }, { status: 400 });
+  if (!resend) return NextResponse.json({ error: "Email service is not configured" }, { status: 503 });
 
   await connectDB();
   const admin = await Admin.findOne({ email: email.toLowerCase() });
