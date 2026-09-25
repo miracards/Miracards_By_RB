@@ -1,0 +1,5 @@
+Contact: mailto:contact@miracards.in
+Contact: https://wa.me/917046441356
+Expires: 2027-01-01T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://miracards.in/.well-known/security.txt

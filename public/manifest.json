@@ -1,0 +1,72 @@
+{
+  "name": "Mira Cards - Luxury Wedding Card Maker",
+  "short_name": "Mira Cards",
+  "description": "Premium wedding card maker & digital invitation designer in Surat, Gujarat. Custom luxury handcrafted cards, foil stamping, laser-cut, box sets, acrylic suites & animated video invites. Worldwide delivery to India, USA, Australia.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#FCFAF7",
+  "theme_color": "#0B1D3A",
+  "lang": "en-IN",
+  "dir": "ltr",
+  "categories": ["wedding", "business", "lifestyle", "shopping"],
+  "screenshots": [
+    {
+      "src": "/og-image.jpg",
+      "sizes": "1200x630",
+      "type": "image/jpeg",
+      "label": "Mira Cards - Luxury Wedding Card Maker"
+    }
+  ],
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "48x48",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "shortcuts": [
+    {
+      "name": "View Collections",
+      "short_name": "Collections",
+      "description": "Browse our luxury wedding card collections",
+      "url": "/collections",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Gallery",
+      "short_name": "Gallery",
+      "description": "View our real wedding card portfolio",
+      "url": "/gallery",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Contact Us",
+      "short_name": "Contact",
+      "description": "Get a free quote or book a consultation",
+      "url": "/contact",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    }
+  ]
+}
