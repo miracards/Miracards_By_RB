@@ -22,15 +22,10 @@ export function useTheme() {
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setThemeState] = useState<Theme>("light");
-  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
     const stored = localStorage.getItem("mira-theme") as Theme | null;
-    const preferred = window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? "dark"
-      : "light";
-    const initial = stored ?? preferred;
+    const initial = stored ?? "light";
     setThemeState(initial);
     applyTheme(initial);
   }, []);
@@ -54,15 +49,6 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   function toggleTheme() {
     setTheme(theme === "light" ? "dark" : "light");
-  }
-
-  // Prevent flash
-  if (!mounted) {
-    return (
-      <ThemeContext.Provider value={{ theme, toggleTheme, setTheme }}>
-        <div style={{ visibility: "hidden" }}>{children}</div>
-      </ThemeContext.Provider>
-    );
   }
 
   return (
