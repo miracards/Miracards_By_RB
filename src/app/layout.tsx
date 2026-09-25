@@ -25,23 +25,23 @@ export const metadata: Metadata = {
     template: "%s | Mira Cards",
   },
   description:
-    "Premium wedding card maker & digital invitation designer in Surat, Gujarat. Custom luxury handcrafted cards, foil stamping, laser-cut designs, rigid box sets, acrylic suites & animated video invites. Worldwide shipping to India, USA, Australia & beyond.",
+    "Premium wedding card maker & digital invitation designer in Ahmedabad, Gujarat. Custom luxury handcrafted cards, foil stamping, laser-cut designs, rigid box sets, acrylic suites & animated video invites. Worldwide shipping to India, USA, Australia & beyond.",
   keywords: [
     // Card Making - Core
     "wedding card maker",
-    "wedding card maker Surat",
+    "wedding card maker Ahmedabad",
     "wedding card maker Gujarat",
     "wedding card maker India",
     "wedding card maker near me",
     "card making services India",
     "custom card making",
     "invitation card maker",
-    "invitation card maker Surat",
+    "invitation card maker Ahmedabad",
     "wedding invitation maker",
     "wedding invitation designer",
     // City & State Targeting
-    "wedding cards Surat",
-    "wedding invitation Surat",
+    "wedding cards Ahmedabad",
+    "wedding invitation Ahmedabad",
     "wedding cards Gujarat",
     "wedding invitation Gujarat",
     "wedding cards Ahmedabad",
@@ -87,7 +87,7 @@ export const metadata: Metadata = {
     // Brand
     "miracards",
     "mira cards",
-    "mira cards surat",
+    "mira cards ahmedabad",
   ],
   authors: [{ name: "Mira Cards", url: "https://miracards.in" }],
   creator: "Mira Cards",
@@ -103,23 +103,23 @@ export const metadata: Metadata = {
     alternateLocale: ["en_US", "en_AU", "en_GB"],
     url: "https://miracards.in",
     siteName: "Mira Cards",
-    title: "Mira Cards - Luxury Wedding Card Maker & Invitation Designer | Surat, Gujarat, India",
+    title: "Mira Cards - Luxury Wedding Card Maker & Invitation Designer | Ahmedabad, Gujarat, India",
     description:
-      "Premium wedding card maker & digital invitation designer in Surat, Gujarat. Worldwide shipping to India, USA, Australia & beyond.",
+      "Premium wedding card maker & digital invitation designer in Ahmedabad, Gujarat. Worldwide shipping to India, USA, Australia & beyond.",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Mira Cards - Luxury Wedding Card Maker & Invitation Designer in Surat, Gujarat",
+        alt: "Mira Cards - Luxury Wedding Card Maker & Invitation Designer in Ahmedabad, Gujarat",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mira Cards - Luxury Wedding Card Maker | Surat, Gujarat, India",
+    title: "Mira Cards - Luxury Wedding Card Maker | Ahmedabad, Gujarat, India",
     description:
-      "Premium wedding card maker & digital invitation designer in Surat, Gujarat. Shipping worldwide to India, USA, Australia.",
+      "Premium wedding card maker & digital invitation designer in Ahmedabad , Gujarat. Shipping worldwide to India, USA, Australia.",
     images: ["/og-image.jpg"],
   },
   alternates: {
@@ -196,7 +196,7 @@ export default function RootLayout({
           }
         `}</style>
         <meta name="geo.region" content="IN-GJ" />
-        <meta name="geo.placename" content="Surat, Gujarat, India" />
+        <meta name="geo.placename" content="Ahmedabad, Gujarat, India" />
         <meta name="geo.position" content="21.1702;72.8311" />
         <meta name="ICBM" content="21.1702, 72.8311" />
         <meta name="language" content="English" />

@@ -2,13 +2,14 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { Globe2, Palette, Phone, Sparkles } from "lucide-react";
 import WhatsAppIcon from "./WhatsAppIcon";
 
 const ANNOUNCEMENTS = [
-  { text: "Handcrafted Luxury Wedding Invitations", emoji: "✨" },
-  { text: "Free Design Consultation", emoji: "🎨", href: "/contact" },
-  { text: "Worldwide Delivery", emoji: "🌍" },
-  { text: "+91 70464 41356", emoji: "📞", href: "tel:+917046441356" },
+  { text: "Handcrafted Luxury Wedding Invitations", icon: <Sparkles size={14} /> },
+  { text: "Free Design Consultation", icon: <Palette size={14} />, href: "/contact" },
+  { text: "Worldwide Delivery", icon: <Globe2 size={14} /> },
+  { text: "+91 70464 41356", icon: <Phone size={14} />, href: "tel:+917046441356" },
   { text: "WhatsApp Consultation", icon: <WhatsAppIcon size={14} style={{ color: "#25D366" }} />, href: "https://wa.me/917046441356?text=Hi%20Mira%20Cards%2C%20I%27d%20like%20to%20enquire%20about%20luxury%20wedding%20invitations." }
 ];
 
@@ -99,7 +100,7 @@ export default function AnnouncementBar() {
                     whiteSpace: "nowrap",
                   }}
                 >
-                  {('icon' in item && item.icon) ? item.icon : <span>{('emoji' in item && item.emoji) ? item.emoji : ''}</span>}
+                  {item.icon}
                   <span>{item.text}</span>
                 </span>
               );
@@ -155,7 +156,7 @@ export default function AnnouncementBar() {
                     whiteSpace: "nowrap",
                   }}
                 >
-                  {('icon' in item && item.icon) ? item.icon : <span>{('emoji' in item && item.emoji) ? item.emoji : ''}</span>}
+                  {item.icon}
                   <span>{item.text}</span>
                 </span>
               );
@@ -213,7 +214,7 @@ export default function AnnouncementBar() {
                     whiteSpace: "nowrap",
                   }}
                 >
-                  {('icon' in item && item.icon) ? item.icon : <span>{('emoji' in item && item.emoji) ? item.emoji : ''}</span>}
+                  {item.icon}
                   <span>{item.text}</span>
                 </span>
               );
