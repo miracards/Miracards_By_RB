@@ -46,12 +46,16 @@ export default function HeroSection() {
       .fromTo(".hd", { opacity: 0, y: 22 }, { opacity: 1, y: 0, duration: 0.7 }, "-=0.45")
       .fromTo(".hb", { opacity: 0, y: 22 }, { opacity: 1, y: 0, duration: 0.6 }, "-=0.4")
       .fromTo(".hbg", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5, stagger: 0.07 }, "-=0.35");
-    gsap.to(".hero-bg-float", { scale: 1.02, duration: 9, ease: "sine.inOut", repeat: -1, yoyo: true });
+    const canAnimate = window.matchMedia("(min-width: 1024px)").matches
+      && (navigator.hardwareConcurrency || 8) > 4;
+    if (canAnimate) {
+      gsap.to(".hero-bg-float", { scale: 1.02, duration: 9, ease: "sine.inOut", repeat: -1, yoyo: true });
+    }
   }, { scope: containerRef });
 
   useEffect(() => {
     const el = containerRef.current;
-    if (!el || typeof window === "undefined" || window.innerWidth < 1024) return;
+    if (!el || typeof window === "undefined" || window.innerWidth < 1024 || (navigator.hardwareConcurrency || 8) <= 4) return;
     const fn = (e: MouseEvent) => {
       gsap.to(".hero-bg-float", {
         x: (e.clientX - window.innerWidth / 2) * 0.012,

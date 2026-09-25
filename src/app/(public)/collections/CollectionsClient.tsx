@@ -39,7 +39,7 @@ function CollectionsContent() {
   useEffect(() => {
     async function fetchCollections() {
       try {
-        const res = await fetch("/api/collections");
+        const res = await fetch("/api/collections", { cache: "force-cache" });
         const data = await res.json();
         if (data.collections) {
           setCollections(data.collections.map((c: any) => ({

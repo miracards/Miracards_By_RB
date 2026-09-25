@@ -24,7 +24,7 @@ export default function Footer() {
   useEffect(() => {
     async function getFooterCollections() {
       try {
-        const res = await fetch("/api/collections");
+        const res = await fetch("/api/collections", { cache: "force-cache" });
         const data = await res.json();
         if (data.collections) {
           setCollections(data.collections.map((c: any) => ({
@@ -42,6 +42,7 @@ export default function Footer() {
   return (
     <footer
       role="contentinfo"
+      className="site-footer"
       style={{
         background: "var(--color-blue-primary)",
         color: "#ffffff",
@@ -58,7 +59,24 @@ export default function Footer() {
       />
 
       <div className="container">
+        <style>{`
+          @media (max-width: 767px) {
+          ."site-footer{
+          padding-top: 2rem !important;
+          }
+            .site-footer-grid {
+              grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+              gap: 2rem 1.25rem !important;
+            }
+
+            .site-footer-brand,
+            .site-footer-contact {
+              grid-column: 1 / -1 !important;
+            }
+          }
+        `}</style>
         <div
+          className="site-footer-grid"
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
@@ -67,7 +85,7 @@ export default function Footer() {
           }}
         >
           {/* Brand Column */}
-          <div style={{ gridColumn: "span 1" }}>
+          <div className="site-footer-brand" style={{ gridColumn: "span 1" }}>
             <div style={{ marginBottom: "1.5rem" }}>
               <Link
                 href="/"
@@ -165,7 +183,7 @@ export default function Footer() {
           </div>
 
           {/* Collections */}
-          <div>
+          <div className="site-footer-collections">
             <h3
               style={{
                 fontFamily: "var(--font-alt)",
@@ -239,7 +257,7 @@ export default function Footer() {
           </div>
 
           {/* Contact */}
-          <div>
+          <div className="site-footer-contact">
             <h3
               style={{
                 fontFamily: "var(--font-alt)",

@@ -126,11 +126,14 @@ export default function TrustBadges() {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 2rem 1.25rem;
               }
+              .trust-item:last-child {
+                display: none;
+              }
             }
             @media (max-width: 479px) {
               .trust-grid {
-                grid-template-columns: 1fr;
-                gap: 1.75rem;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.75rem 1rem;
               }
             }
 

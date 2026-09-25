@@ -23,7 +23,7 @@ export default function FeaturedCollections() {
   useEffect(() => {
     async function fetchFeatured() {
       try {
-        const res = await fetch("/api/collections");
+        const res = await fetch("/api/collections", { cache: "force-cache" });
         const data = await res.json();
         if (data.collections) {
           // Take top 6
@@ -57,10 +57,11 @@ export default function FeaturedCollections() {
 
   if (loading) return <FeaturedCollectionsSkeleton />;
   return (
-    <section className="section" style={{ background: "var(--bg-secondary)", padding: "6rem 0" }}>
+    <section className="featured-collections-section section" style={{ background: "var(--bg-secondary)", padding: "6rem 0" }}>
       <div className="container">
         {/* Header Block */}
         <div
+          className="featured-collections-header"
           style={{
             display: "flex",
             alignItems: "flex-end",
@@ -99,6 +100,7 @@ export default function FeaturedCollections() {
           </div>
           <Link
             href="/collections"
+            className="featured-collections-view-all featured-collections-view-all-desktop"
             style={{
               fontFamily: "var(--font-alt)",
               fontSize: "0.8125rem",
@@ -122,14 +124,86 @@ export default function FeaturedCollections() {
         </div>
 
         {/* Collections Grid */}
+        <style>{`
+          @media (max-width: 767px) {
+            .featured-collections-section {
+              padding: 2rem 0 !important;
+            }
+
+            .featured-collections-header {
+              align-items: flex-start !important;
+              gap: 0.75rem !important;
+              margin-bottom: 1.5rem !important;
+            }
+
+            .featured-collections-view-all {
+              align-self: flex-start;
+              font-size: 0.72rem !important;
+              letter-spacing: 0.08em !important;
+            }
+
+            .featured-collections-view-all-desktop {
+              display: none !important;
+            }
+
+            .featured-collections-view-all-mobile {
+              display: inline-flex !important;
+            }
+
+            .featured-collections-actions {
+              display: flex !important;
+              margin-top: 1.25rem !important;
+            }
+
+            .featured-collections-grid {
+              display: flex !important;
+              flex-wrap: nowrap;
+              overflow-x: auto;
+              overflow-y: hidden;
+              gap: 0.75rem;
+              padding: 0 0 0.65rem;
+              scroll-snap-type: x proximity;
+              scrollbar-width: thin;
+              scrollbar-color: rgba(11, 29, 58, 0.35) transparent;
+            }
+
+            .featured-collections-grid::-webkit-scrollbar {
+              height: 4px;
+            }
+
+            .featured-collections-grid::-webkit-scrollbar-track {
+              background: transparent;
+            }
+
+            .featured-collections-grid::-webkit-scrollbar-thumb {
+              background: rgba(11, 29, 58, 0.35);
+              border-radius: 999px;
+            }
+
+            .featured-collection-link {
+              flex: 0 0 170px;
+              scroll-snap-align: start;
+            }
+
+            .featured-collection-card {
+              height: 245px !important;
+            }
+
+            .featured-collection-image {
+              height: 155px !important;
+              padding-bottom: 0 !important;
+              flex-shrink: 0;
+            }
+          }
+        `}</style>
         <div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6"
+          className="featured-collections-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6"
           style={{ width: "100%" }}
         >
           {collections.map((col) => (
-            <Link key={col.id} href={col.href} style={{ textDecoration: "none" }}>
+            <Link key={col.id} href={col.href} className="featured-collection-link" style={{ textDecoration: "none" }}>
               <div
-                className="card-glass-ios"
+                className="featured-collection-card card-glass-ios"
                 style={{
                   overflow: "hidden",
                   cursor: "pointer",
@@ -139,7 +213,7 @@ export default function FeaturedCollections() {
                 }}
               >
                 {/* Image Wrapper */}
-                <div style={{ position: "relative", width: "100%", paddingBottom: "115%", overflow: "hidden" }}>
+                <div className="featured-collection-image" style={{ position: "relative", width: "100%", paddingBottom: "115%", overflow: "hidden" }}>
                   <Image
                     src={col.image}
                     alt={col.title}
@@ -178,6 +252,32 @@ export default function FeaturedCollections() {
               </div>
             </Link>
           ))}
+        </div>
+
+        <div className="featured-collections-actions" style={{ display: "none", justifyContent: "center", marginTop: "2rem" }}>
+          <Link
+            href="/collections"
+            className="featured-collections-view-all featured-collections-view-all-mobile"
+            style={{
+              fontFamily: "var(--font-alt)",
+              fontSize: "0.8125rem",
+              fontWeight: 600,
+              color: "var(--text)",
+              letterSpacing: "0.1em",
+              textTransform: "uppercase",
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "0.5rem",
+              textDecoration: "none",
+              borderBottom: "1.5px solid var(--gold)",
+              paddingBottom: "4px",
+              transition: "opacity var(--transition-fast)",
+            }}
+            onMouseEnter={(e) => { e.currentTarget.style.opacity = "0.75"; }}
+            onMouseLeave={(e) => { e.currentTarget.style.opacity = "1"; }}
+          >
+            View All Collections <ArrowRight size={14} />
+          </Link>
         </div>
       </div>
     </section>

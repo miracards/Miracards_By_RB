@@ -8,17 +8,18 @@ interface SkeletonProps {
   width?: string;
   height?: string;
   borderRadius?: string;
+  className?: string;
   style?: React.CSSProperties;
 }
 
-export function Skeleton({ width = "100%", height = "16px", borderRadius = "6px", style }: SkeletonProps) {
+export function Skeleton({ width = "100%", height = "16px", borderRadius = "6px", className, style }: SkeletonProps) {
   const { theme } = useTheme();
   const dk = theme === "dark";
 
   return (
     <>
       <div
-        className="sk-shimmer"
+        className={`sk-shimmer${className ? ` ${className}` : ""}`}
         style={{
           width,
           height,
@@ -191,7 +192,7 @@ export function FeaturedCollectionsSkeleton() {
   const dk = theme === "dark";
 
   return (
-    <section style={{ background: "var(--bg-secondary)", padding: "6rem 0" }}>
+    <section className="featured-collections-skeleton-section" style={{ background: "var(--bg-secondary)", padding: "6rem 0" }}>
       <div className="container">
         {/* Header row */}
         <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", flexWrap: "wrap", gap: "1.5rem", marginBottom: "3.5rem" }}>
@@ -203,13 +204,37 @@ export function FeaturedCollectionsSkeleton() {
         </div>
 
         {/* 6-column card grid */}
+        <style>{`
+          @media (max-width: 767px) {
+            .featured-collections-skeleton-section {
+              padding: 2rem 0 !important;
+            }
+
+            .featured-collections-skeleton-grid {
+              display: flex !important;
+              flex-wrap: nowrap;
+              overflow: hidden;
+              gap: 0.75rem;
+            }
+
+            .featured-collections-skeleton-card {
+              flex: 0 0 170px;
+              height: 245px;
+            }
+
+            .featured-collections-skeleton-image {
+              height: 155px !important;
+              padding-bottom: 0 !important;
+            }
+          }
+        `}</style>
         <div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6"
+          className="featured-collections-skeleton-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-6"
           style={{ width: "100%" }}
         >
           {Array.from({ length: 6 }).map((_, i) => (
-            <div key={i} style={{ borderRadius: "14px", overflow: "hidden", background: dk ? "#0c1f35" : "#FFFFFF", boxShadow: "0 2px 8px rgba(0,0,0,0.05)" }}>
-              <Skeleton width="100%" style={{ paddingBottom: "115%", height: "0" }} borderRadius="0" />
+            <div key={i} className="featured-collections-skeleton-card" style={{ borderRadius: "14px", overflow: "hidden", background: dk ? "#0c1f35" : "#FFFFFF", boxShadow: "0 2px 8px rgba(0,0,0,0.05)" }}>
+              <Skeleton className="featured-collections-skeleton-image" width="100%" style={{ paddingBottom: "115%", height: "0" }} borderRadius="0" />
               <div style={{ padding: "1.25rem", textAlign: "center" }}>
                 <Skeleton width="80%" height="14px" borderRadius="4px" style={{ margin: "0 auto 8px" }} />
                 <Skeleton width="55%" height="11px" borderRadius="4px" style={{ margin: "0 auto" }} />

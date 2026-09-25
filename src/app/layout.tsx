@@ -1,13 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/shared/ThemeProvider";
-import { Geist, Great_Vibes, Monsieur_La_Doulaise, Herr_Von_Muellerhoff } from "next/font/google";
-import { cn } from "@/lib/utils";
-
-const geist = Geist({subsets:['latin'],variable:'--font-sans'});
-const greatVibes = Great_Vibes({ weight: "400", subsets: ['latin'], variable: '--font-great-vibes' });
-const monsieurLaDoulaise = Monsieur_La_Doulaise({ weight: "400", subsets: ['latin'], variable: '--font-monsieur-la-doulaise' });
-const herrVonMuellerhoff = Herr_Von_Muellerhoff({ weight: "400", subsets: ['latin'], variable: '--font-herr-von-muellerhoff' });
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -206,14 +199,7 @@ export default function RootLayout({
         <meta name="coverage" content="Worldwide" />
         <meta name="rating" content="General" />
       </head>
-      <body
-        className={cn(
-          geist.variable,
-          greatVibes.variable,
-          monsieurLaDoulaise.variable,
-          herrVonMuellerhoff.variable,
-        )}
-      >
+      <body>
         <ThemeProvider>
           {/* Global iOS Background Glass Blobs */}
           <div className="bg-blobs-container" aria-hidden="true">

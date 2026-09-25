@@ -56,7 +56,7 @@ export default function GalleryClient() {
 
     async function fetchCategories() {
       try {
-        const res = await fetch("/api/collections");
+        const res = await fetch("/api/collections", { cache: "force-cache" });
         const data = await res.json();
         if (data.collections) {
           setCategories(["All", ...data.collections.map((c: any) => c.title)]);

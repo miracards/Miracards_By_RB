@@ -1078,6 +1078,12 @@ body {
   will-change: transform;
 }
 
+@media (max-width: 1023px) {
+  .bg-blobs-container {
+    display: none;
+  }
+}
+
 .dark .bg-blob {
   mix-blend-mode: screen;
   opacity: 0.14;
@@ -1090,7 +1096,6 @@ body {
   background: radial-gradient(circle, #c9a227 0%, transparent 70%);
   top: -10%;
   left: -10%;
-  animation: blob-float-1 25s infinite alternate ease-in-out;
 }
 
 .blob-2 {
@@ -1099,7 +1104,6 @@ body {
   background: radial-gradient(circle, #2f6db5 0%, transparent 70%);
   bottom: -10%;
   right: -10%;
-  animation: blob-float-2 30s infinite alternate ease-in-out;
 }
 
 .blob-3 {
@@ -1108,7 +1112,6 @@ body {
   background: radial-gradient(circle, #ffdca3 0%, transparent 70%);
   top: 40%;
   left: 45%;
-  animation: blob-float-3 20s infinite alternate ease-in-out;
 }
 
 .dark .blob-3 {
