@@ -21,7 +21,7 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://miracards.in"),
   title: {
-    default: "Mira Cards - Luxury Wedding Card Maker & Invitation Designer | Surat, Gujarat, India",
+    default: "Mira Cards - Luxury Wedding Card Maker & Invitation Designer | Ahmedabad, Gujarat",
     template: "%s | Mira Cards",
   },
   description:
