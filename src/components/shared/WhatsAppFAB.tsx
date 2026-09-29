@@ -1,5 +1,6 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import WhatsAppIcon from "./WhatsAppIcon";
 
 const WHATSAPP_NUMBER = "917046441356";
@@ -7,7 +8,10 @@ const DEFAULT_MESSAGE =
   "Hi Mira Cards, I'd like to enquire about luxury wedding invitations. Could you help me?";
 
 export default function WhatsAppFAB() {
+  const pathname = usePathname();
   const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(DEFAULT_MESSAGE)}`;
+
+  if (pathname === "/") return null;
 
   return (
     <a

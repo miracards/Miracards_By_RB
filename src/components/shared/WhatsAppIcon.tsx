@@ -9,11 +9,12 @@ export default function WhatsAppIcon({
   size = 20,
   color = "currentColor",
   style,
+  className,
   ...props
 }: WhatsAppIconProps) {
   return (
     <i
-      className={`fa-brands fa-whatsapp${props.className ? ` ${props.className}` : ""}`}
+      className={`fa-brands fa-whatsapp${className ? ` ${className}` : ""}`}
       aria-hidden="true"
       style={{ fontSize: size, color, display: "inline-block", verticalAlign: "middle", ...style }}
       {...props}
