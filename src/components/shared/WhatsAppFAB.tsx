@@ -18,33 +18,33 @@ export default function WhatsAppFAB() {
       id="whatsapp-fab"
       style={{
         position: "fixed",
-        bottom: "1.5rem",
-        right: "1.5rem",
-        zIndex: 40,
-        width: "56px",
-        height: "56px",
-        borderRadius: "50%",
-        background: "#25D366",
-        color: "#ffffff",
+        right: "calc(1rem + env(safe-area-inset-right))",
+        bottom: "calc(1rem + env(safe-area-inset-bottom))",
+        zIndex: 50,
+        width: "60px",
+        height: "60px",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        borderRadius: "50%",
+        background: "linear-gradient(180deg, #1bdc5b 0%, #18a54a 100%)",
+        color: "#ffffff",
         textDecoration: "none",
-        boxShadow: "0 8px 32px rgba(37,211,102,0.45)",
-        transition: "all var(--transition-base)",
-        animation: "pulse-gold 3s ease-in-out infinite",
+        boxShadow: "0 12px 28px rgba(37, 211, 102, 0.38)",
+        border: "3px solid rgba(255,255,255,0.7)",
+        transition: "transform 0.2s ease, box-shadow 0.2s ease",
         willChange: "transform, box-shadow",
       }}
       onMouseEnter={(e) => {
-        (e.currentTarget as HTMLElement).style.transform = "scale(1.1)";
-        (e.currentTarget as HTMLElement).style.boxShadow = "0 12px 40px rgba(37,211,102,0.6)";
+        (e.currentTarget as HTMLElement).style.transform = "translateY(-2px) scale(1.04)";
+        (e.currentTarget as HTMLElement).style.boxShadow = "0 18px 34px rgba(37, 211, 102, 0.48)";
       }}
       onMouseLeave={(e) => {
-        (e.currentTarget as HTMLElement).style.transform = "scale(1)";
-        (e.currentTarget as HTMLElement).style.boxShadow = "0 8px 32px rgba(37,211,102,0.45)";
+        (e.currentTarget as HTMLElement).style.transform = "translateY(0) scale(1)";
+        (e.currentTarget as HTMLElement).style.boxShadow = "0 12px 28px rgba(37, 211, 102, 0.38)";
       }}
     >
-      <WhatsAppIcon size={24} />
+      <WhatsAppIcon size={26} color="#ffffff" aria-hidden="true" />
     </a>
   );
 }
