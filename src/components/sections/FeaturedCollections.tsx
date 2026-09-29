@@ -6,14 +6,20 @@ import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { FeaturedCollectionsSkeleton } from "@/components/shared/Skeleton";
 
-const S3_BASE = process.env.NEXT_PUBLIC_S3_BASE_URL || "https://mira-cards.s3.eu-north-1.amazonaws.com";
-
 interface FeaturedColData {
   id: string;
   title: string;
   subtitle: string;
   image: string;
   href: string;
+}
+
+interface CollectionApiItem {
+  _id?: string;
+  title?: string;
+  slug?: string;
+  description?: string;
+  coverImage?: string;
 }
 
 export default function FeaturedCollections() {
@@ -24,22 +30,33 @@ export default function FeaturedCollections() {
     async function fetchFeatured() {
       try {
         const res = await fetch("/api/collections", { cache: "force-cache" });
-        const data = await res.json();
+        const data = (await res.json()) as { collections?: CollectionApiItem[] };
+
         if (data.collections) {
-          // Take top 6
-          const items = data.collections.slice(0, 6).map((c: any) => {
+          const filteredCollections = data.collections.filter((c) => {
+            const title = String(c?.title || "").toLowerCase();
+            const slug = String(c?.slug || "").toLowerCase();
+            const description = String(c?.description || "").toLowerCase();
+
+            return !(
+              title.includes("engagement") ||
+              slug.includes("engagement") ||
+              description.includes("engagement")
+            );
+          });
+
+          const items = filteredCollections.slice(0, 6).map((c) => {
             let subtitle = "Signature collection";
             if (c.slug === "wedding-invitation") subtitle = "Timeless elegance";
             else if (c.slug === "premium-money-envelop") subtitle = "Premium & luxurious";
-            // else if (c.slug === "engagement-invitation") subtitle = "Intricate & delicate";
             else if (c.slug === "babyshower-invitation") subtitle = "Pastel & floral";
             else if (c.slug === "welcome-boards") subtitle = "Modern & stylish";
             else if (c.slug === "vastupujan-invitation") subtitle = "Animated & traditional";
 
             return {
-              id: c._id,
-              title: c.title,
-              subtitle: subtitle,
+              id: c._id || c.slug || "",
+              title: c.title || "Collection",
+              subtitle,
               image: c.coverImage || "",
               href: `/collections/${c.slug}`,
             };
