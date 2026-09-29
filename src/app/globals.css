@@ -1,6 +1,7 @@
 /* All fonts loaded locally via layout.tsx — no external font requests */
 @import "tailwindcss";
 @import "tw-animate-css";
+@import "@fortawesome/fontawesome-free/css/brands.min.css";
 
 @font-face {
   font-family: "Hearthway";

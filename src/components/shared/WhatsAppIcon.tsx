@@ -1,6 +1,6 @@
 import React from "react";
 
-interface WhatsAppIconProps extends React.SVGProps<SVGSVGElement> {
+interface WhatsAppIconProps extends React.ComponentProps<"i"> {
   size?: number;
   color?: string;
 }
@@ -12,15 +12,11 @@ export default function WhatsAppIcon({
   ...props
 }: WhatsAppIconProps) {
   return (
-    <svg
-      viewBox="0 0 448 512"
-      width={size}
-      height={size}
-      fill={color}
-      style={{ display: "inline-block", verticalAlign: "middle", ...style }}
+    <i
+      className={`fa-brands fa-whatsapp${props.className ? ` ${props.className}` : ""}`}
+      aria-hidden="true"
+      style={{ fontSize: size, color, display: "inline-block", verticalAlign: "middle", ...style }}
       {...props}
-    >
-      <path d="M380.9 97.1C339 55.1 283.8 32 224.1 32 101.5 32 0 133.5 0 256c0 53.2 13.9 105.3 40.4 150.8L0 512l168.6-44.2c44 24.5 94.2 37.5 145.8 37.5H224c122.5 0 224-101.5 224-224 0-59.6-23.1-114.8-65.1-156.8ZM224.1 449.2c-44.1 0-87.1-11.8-124.4-34.1l-8.9-5.3-99.8 26.2 26.7-97.6-5.8-9.1c-24.4-38.4-37.2-82.9-37.2-128.4 0-133.7 108.8-242.5 242.5-242.5 64.8 0 125.8 25.2 171.9 71.2 46 46 71.3 107.5 71.3 172.3 0 133.8-108.8 242.6-242.5 242.6Zm132.5-181.9c-7.3-3.7-43.2-21.3-49.9-23.7-6.7-2.4-11.5-3.7-16.4 3.7-4.8 7.3-18.7 23.7-22.9 28.5-4.2 4.8-8.5 5.4-15.8 1.8-7.3-3.7-30.9-11.4-58.8-36.3-21.7-19.4-36.4-43.4-40.7-50.7-4.3-7.3-.46-11.2 3.2-14.8 3.3-3.3 7.3-8.5 11-12.8 3.7-4.3 4.9-7.3 7.3-12.1 2.4-4.8 1.2-9 .6-12.1s-7.2-17.5-9.8-23.9c-2.6-6.3-5.3-5.4-7.3-5.5-1.9-.1-4.1-.1-6.3-.1-2.2 0-5.7.8-8.8 4.3-3.1 3.5-11.8 11.5-11.8 28s12.1 32.5 13.8 34.8c1.7 2.4 23.5 35.9 57 50.3 33.6 14.4 33.6 9.6 39.6 9 6-.6 19.4-7.9 22.1-15.5 2.7-7.6 2.7-14 1.9-15.4-.8-1.4-3.1-2.4-6.4-4.2Z" />
-    </svg>
+    />
   );
 }
