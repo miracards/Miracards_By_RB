@@ -31,7 +31,7 @@ export default function FeaturedCollections() {
             let subtitle = "Signature collection";
             if (c.slug === "wedding-invitation") subtitle = "Timeless elegance";
             else if (c.slug === "premium-money-envelop") subtitle = "Premium & luxurious";
-            else if (c.slug === "engagement-invitation") subtitle = "Intricate & delicate";
+            // else if (c.slug === "engagement-invitation") subtitle = "Intricate & delicate";
             else if (c.slug === "babyshower-invitation") subtitle = "Pastel & floral";
             else if (c.slug === "welcome-boards") subtitle = "Modern & stylish";
             else if (c.slug === "vastupujan-invitation") subtitle = "Animated & traditional";

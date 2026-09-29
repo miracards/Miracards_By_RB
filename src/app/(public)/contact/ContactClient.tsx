@@ -270,7 +270,7 @@ export default function ContactClient() {
                 {[
                   {
                     name: "Head Office (Ahmedabad)",
-                    address: "3rd floor, 349, Yash Arian Complex, Nr. Swami Vivekanand Cir, Memnagar, Ahmedabad, Gujarat 380052",
+                    address: "Yash Arian Complex, Nr. Swami Vivekanand Cir, Memnagar, Ahmedabad, Gujarat 380052",
                     phones: [
                       { label: "India", value: "+91 70464 41356", href: "tel:+917046441356" },
                       { label: "UK", value: "+44 7758 157357", href: "tel:+447758157357" }
