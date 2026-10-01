@@ -43,7 +43,13 @@ const STEPS = [
 
 export default function ProcessSection() {
   return (
-    <section  className="section responsive-section"  style={{ background: "var(--bg)", padding: "7rem 0" }}>
+   <section
+  className="section responsive-section"
+  style={{
+    background: "var(--bg)",
+    padding: "clamp(2rem, 7vw, 7rem) 0"
+  }}
+>
       <div className="container">
         {/* Header */}
         <div style={{ textAlign: "center", marginBottom: "5rem" }}>
