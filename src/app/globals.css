@@ -3,38 +3,6 @@
 @import "tw-animate-css";
 @import "@fortawesome/fontawesome-free/css/brands.min.css";
 
-@font-face {
-  font-family: "Hearthway";
-  src: url("/fonts/Hearthway.otf") format("opentype");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Linux Biolinum";
-  src: url("/fonts/LinBiolinum_R.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Linux Biolinum";
-  src: url("/fonts/LinBiolinum_RB.ttf") format("truetype");
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Linux Biolinum";
-  src: url("/fonts/LinBiolinum_RI.ttf") format("truetype");
-  font-weight: normal;
-  font-style: italic;
-  font-display: swap;
-}
-
 /* MIRA CARDS - Luxury Design System */
 
 @custom-variant dark (&:is(.dark *));
@@ -42,16 +10,16 @@
 /* - Tailwind v4 Theme - */
 @theme {
   /* Fonts */
-  --font-sans: "Linux Biolinum", system-ui, sans-serif;
-  --font-display: "Linux Biolinum", Georgia, serif;
-  --font-heading: "Linux Biolinum", Georgia, serif;
-  --font-body: "Linux Biolinum", system-ui, sans-serif;
-  --font-cormorant: "Linux Biolinum", Georgia, serif;
-  --font-inter: "Linux Biolinum", system-ui, sans-serif;
-  --font-alt: "Linux Biolinum", system-ui, sans-serif;
-  --font-number: "Linux Biolinum", system-ui, sans-serif;
-  --font-signature: "Hearthway", var(--font-monsieur-la-doulaise), var(--font-herr-von-muellerhoff), var(--font-great-vibes), cursive;
-  --font-logo: "Hearthway", "Linux Biolinum", Georgia, serif;
+  --font-sans: var(--font-linux-biolinum), system-ui, sans-serif;
+  --font-display: var(--font-linux-biolinum), Georgia, serif;
+  --font-heading: var(--font-linux-biolinum), Georgia, serif;
+  --font-body: var(--font-linux-biolinum), system-ui, sans-serif;
+  --font-cormorant: var(--font-linux-biolinum), Georgia, serif;
+  --font-inter: var(--font-linux-biolinum), system-ui, sans-serif;
+  --font-alt: var(--font-linux-biolinum), system-ui, sans-serif;
+  --font-number: var(--font-linux-biolinum), system-ui, sans-serif;
+  --font-signature: var(--font-hearthway-face), var(--font-monsieur-la-doulaise), var(--font-herr-von-muellerhoff), var(--font-great-vibes), cursive;
+  --font-logo: var(--font-hearthway-face), var(--font-linux-biolinum), Georgia, serif;
 
   /* - Light Theme Colors - */
   --color-bg-primary: #fcfaf7;

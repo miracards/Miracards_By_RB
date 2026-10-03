@@ -1,6 +1,25 @@
 import type { Metadata, Viewport } from "next";
+import localFont from "next/font/local";
 import "./globals.css";
 import { ThemeProvider } from "@/components/shared/ThemeProvider";
+
+const linuxBiolinum = localFont({
+  src: [
+    { path: "../../public/fonts/LinBiolinum_R.ttf", weight: "400", style: "normal" },
+    { path: "../../public/fonts/LinBiolinum_RB.ttf", weight: "700", style: "normal" },
+    { path: "../../public/fonts/LinBiolinum_RI.ttf", weight: "400", style: "italic" },
+  ],
+  variable: "--font-linux-biolinum",
+  display: "optional",
+  preload: true,
+});
+
+const hearthway = localFont({
+  src: "../../public/fonts/Hearthway.otf",
+  variable: "--font-hearthway-face",
+  display: "optional",
+  preload: true,
+});
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -141,53 +160,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning data-scroll-behavior="smooth">
+    <html
+      lang="en"
+      className={`${linuxBiolinum.variable} ${hearthway.variable}`}
+      suppressHydrationWarning
+      data-scroll-behavior="smooth"
+    >
       <head>
-        {/* Local fonts — Linux Biolinum (body/UI) + Hearthway (logo/signature) */}
-        <style>{`
-          @font-face {
-            font-family: 'Linux Biolinum';
-            src: url('/fonts/LinBiolinum_R.ttf') format('truetype');
-            font-weight: 400;
-            font-style: normal;
-            font-display: swap;
-          }
-          @font-face {
-            font-family: 'Linux Biolinum';
-            src: url('/fonts/LinBiolinum_RB.ttf') format('truetype');
-            font-weight: 700;
-            font-style: normal;
-            font-display: swap;
-          }
-          @font-face {
-            font-family: 'Linux Biolinum';
-            src: url('/fonts/LinBiolinum_RI.ttf') format('truetype');
-            font-weight: 400;
-            font-style: italic;
-            font-display: swap;
-          }
-          @font-face {
-            font-family: 'Hearthway';
-            src: url('/fonts/Hearthway.otf') format('opentype');
-            font-weight: normal;
-            font-style: normal;
-            font-display: swap;
-          }
-          html, body, * {
-            font-family: 'Linux Biolinum', system-ui, sans-serif;
-          }
-          :root {
-            --font-sans:      'Linux Biolinum', system-ui, sans-serif;
-            --font-body:      'Linux Biolinum', system-ui, sans-serif;
-            --font-display:   'Linux Biolinum', Georgia, serif;
-            --font-heading:   'Linux Biolinum', Georgia, serif;
-            --font-alt:       'Linux Biolinum', system-ui, sans-serif;
-            --font-number:    'Linux Biolinum', system-ui, sans-serif;
-            --font-hearthway: 'Hearthway', cursive;
-            --font-signature: 'Hearthway', cursive;
-            --font-logo:      'Hearthway', cursive;
-          }
-        `}</style>
         <meta name="geo.region" content="IN-GJ" />
         <meta name="geo.placename" content="Ahmedabad, Gujarat, India" />
         <meta name="geo.position" content="21.1702;72.8311" />
