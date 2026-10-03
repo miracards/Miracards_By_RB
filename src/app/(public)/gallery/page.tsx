@@ -4,7 +4,7 @@ import GalleryClient from "./GalleryClient";
 export const metadata: Metadata = {
   title: "Wedding Card Maker Portfolio & Real Wedding Gallery | Mira Cards",
   description:
-    "Explore our real wedding invitation portfolio. Custom card making projects designed for clients in Surat, Gujarat, India, USA, Australia & worldwide. Browse handcrafted luxury cards, box sets, laser-cut designs, digital invites & babyshower cards.",
+    "Explore wedding invitation designs created for customers in Ahmedabad, Vadodara, Gandhinagar, across India, and overseas. Browse luxury box sets, Gujarati cards, foil, laser-cut, acrylic, digital, and baby shower invitations.",
   keywords: [
     "wedding invitation portfolio India",
     "real wedding cards gallery",

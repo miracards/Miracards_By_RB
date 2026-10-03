@@ -246,6 +246,82 @@ export default function BlogClient() {
             </div>
           ))}
         </div>
+
+        <section
+          aria-labelledby="ahmedabad-wedding-guide-heading"
+          style={{ maxWidth: "900px", margin: "5rem auto 0", lineHeight: 1.8 }}
+        >
+          <span
+            style={{
+              color: "#C9A227",
+              fontSize: "11px",
+              fontWeight: 600,
+              letterSpacing: "2px",
+              textTransform: "uppercase",
+            }}
+          >
+            Ahmedabad Wedding Planning
+          </span>
+          <h2
+            id="ahmedabad-wedding-guide-heading"
+            style={{
+              fontFamily: "var(--font-heading), 'Playfair Display', Georgia, serif",
+              fontSize: "clamp(26px, 3vw, 38px)",
+              lineHeight: 1.25,
+              margin: "0.6rem 0 1.25rem",
+              color: dk ? "#FFFFFF" : "#0B1D3A",
+            }}
+          >
+            A Thoughtful Guide to Wedding Invitations in Ahmedabad
+          </h2>
+          <p style={{ color: dk ? "#d0dae6" : "#5F5F5F", marginBottom: "1rem" }}>
+            When comparing wedding invitation cards in Ahmedabad, start with the celebration itself:
+            the number of events, who is hosting, your guest list, and how much time you need for
+            proofing and printing. A local wedding card designer can help shape the wording and
+            artwork, while a clear quote should outline paper, finishes, quantity, and delivery.
+            Personalized wedding invitations can be traditional, contemporary, or a considered blend
+            of both.
+          </p>
+          <h3
+            style={{
+              color: dk ? "#FFFFFF" : "#0B1D3A",
+              fontFamily: "var(--font-heading), 'Playfair Display', Georgia, serif",
+              fontSize: "21px",
+              margin: "2rem 0 0.5rem",
+            }}
+          >
+            Gujarati Traditions and Indian Wedding Suites
+          </h3>
+          <p style={{ color: dk ? "#d0dae6" : "#5F5F5F", marginBottom: "1rem" }}>
+            Gujarati kankotri and Gujarati wedding invitation designs often bring family customs,
+            auspicious motifs, and ceremony details together in one suite. Consider how a Hindu or
+            broader Indian marriage invitation will introduce each event, and whether you need
+            separate ceremony cards, inserts, or wording in more than one language. The same planning
+            process works for engagement invitations and other family celebrations.
+          </p>
+          <h3
+            style={{
+              color: dk ? "#FFFFFF" : "#0B1D3A",
+              fontFamily: "var(--font-heading), 'Playfair Display', Georgia, serif",
+              fontSize: "21px",
+              margin: "2rem 0 0.5rem",
+            }}
+          >
+            Choosing Paper, Finishes, and Digital Details
+          </h3>
+          <p style={{ color: dk ? "#d0dae6" : "#5F5F5F", marginBottom: "1rem" }}>
+            Compare paper and print samples before choosing details such as gold foil, embossing,
+            laser cutting, acrylic, or a boxed presentation. A premium invitation suite may also
+            include coordinated envelopes, save-the-date cards, RSVP inserts, menus, place cards,
+            itineraries, or thank-you notes. Digital wedding invitations and an online RSVP page can
+            complement printed cards when guests need quick updates or event information.
+          </p>
+          <p style={{ color: dk ? "#d0dae6" : "#5F5F5F" }}>
+            For baby showers, housewarmings, and welcome displays, ask about matching artwork and
+            current product options. Share your event date and requirements early so there is time to
+            review a design, approve a proof, and plan printing or digital delivery.
+          </p>
+        </section>
       </div>
     </div>
   );

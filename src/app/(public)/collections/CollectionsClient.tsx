@@ -395,6 +395,41 @@ function CollectionsContent() {
             </button>
           </div>
         )}
+
+        <section
+          aria-labelledby="stationery-suite-heading"
+          style={{ maxWidth: "960px", margin: "5rem auto 0", lineHeight: 1.8 }}
+        >
+          <h2
+            id="stationery-suite-heading"
+            style={{
+              fontFamily: "var(--font-heading), 'Playfair Display', Georgia, serif",
+              fontSize: "clamp(25px, 3vw, 36px)",
+              lineHeight: 1.25,
+              marginBottom: "1rem",
+              color: dk ? "#FFFFFF" : "#0B1D3A",
+            }}
+          >
+            Build a Coordinated Wedding Invitation Suite
+          </h2>
+          <p style={{ color: dk ? "#d0dae6" : "#5F5F5F", marginBottom: "1rem" }}>
+            Pair your invitation with premium money envelopes, save-the-date cards, RSVP and itinerary
+            inserts, wedding menus, place cards, thank-you cards, welcome notes, gift tags, stickers,
+            ceremony cards, or matching gift packaging. Ask about personalized wedding logos and
+            hashtag artwork to carry one design theme through your celebration.
+          </p>
+          <p style={{ color: dk ? "#d0dae6" : "#5F5F5F", marginBottom: "1rem" }}>
+            For the venue, explore wedding welcome boards and sign boards. Mira Cards also creates
+            invitation designs for engagement events, baby showers, Vastupujan, and housewarmings.
+            Share the event date, quantity, and delivery location so the team can recommend suitable
+            paper, printing, and finishing options.
+          </p>
+          <p style={{ color: dk ? "#d0dae6" : "#5F5F5F" }}>
+            Couples in Ahmedabad, Vadodara, and Gandhinagar can enquire about orders, as can customers
+            elsewhere in India and overseas. International delivery and product availability can be
+            confirmed with your quote.
+          </p>
+        </section>
       </div>
     </div>
   );

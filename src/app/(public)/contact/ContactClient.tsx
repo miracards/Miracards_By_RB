@@ -120,8 +120,10 @@ export default function ContactClient() {
               lineHeight: 1.6,
             }}
           >
-            We invite you to share details of your celebration. Our design experts will craft
-            custom wedding stationery that honors your vision and heritage.
+            Share your celebration details to discuss custom wedding cards, Gujarati kankotri,
+            invitation printing, or digital designs. We take inquiries from Ahmedabad, Vadodara,
+            Gandhinagar, across India, and overseas; contact us to confirm design options, delivery,
+            and timing for your event.
           </p>
         </div>
 

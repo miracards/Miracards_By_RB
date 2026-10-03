@@ -4,7 +4,7 @@ import AboutClient from "./AboutClient";
 export const metadata: Metadata = {
   title: "About Mira Cards - Premium Wedding Card Maker in Surat, Gujarat | Our Story",
   description:
-    "Discover the story behind Mira Cards, the premium wedding card maker in Surat, Gujarat. We blend heritage craftsmanship with modern luxury invitation design, serving clients across India, USA, Australia and worldwide with bespoke handcrafted wedding stationery.",
+    "Discover Mira Cards' heritage-inspired wedding stationery and modern invitation design. We serve customers in Ahmedabad, Vadodara, Gandhinagar, across India, and internationally.",
   keywords: [
     "about Mira Cards Surat",
     "wedding card maker story Gujarat",

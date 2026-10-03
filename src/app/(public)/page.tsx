@@ -18,7 +18,7 @@ const jsonLd = {
       "@id": "https://miracards.in/#business",
       "name": "Mira Cards",
       "alternateName": ["Mira Cards Ahmedabad", "Mira Cards Wedding Invitations"],
-      "description": "Premium wedding card maker & digital invitation designer in Ahmedabad, Gujarat. Custom luxury handcrafted cards, foil stamping, laser-cut, box sets, acrylic suites & animated video invites. Shipping worldwide.",
+      "description": "Custom wedding invitation design, printing, and digital invitation services for Ahmedabad, Vadodara, Gandhinagar, and international customers.",
       "url": "https://miracards.in",
       "telephone": "+917046441356",
       "priceRange": "₹₹₹",
@@ -60,8 +60,10 @@ const jsonLd = {
         { "@type": "Country", "name": "Australia" },
         { "@type": "Country", "name": "United Kingdom" },
         { "@type": "Country", "name": "Canada" },
+        { "@type": "Country", "name": "United Arab Emirates" },
         { "@type": "City", "name": "Surat" },
         { "@type": "City", "name": "Ahmedabad" },
+        { "@type": "City", "name": "Gandhinagar" },
         { "@type": "City", "name": "Vadodara" },
         { "@type": "City", "name": "Rajkot" },
         { "@type": "City", "name": "Mumbai" },
@@ -170,20 +172,48 @@ const jsonLd = {
 };
 
 export const metadata: Metadata = {
-  title: "Mira Cards - Luxury Wedding Card & Digital Invitation Designer | Ahmedabad, Gujarat, India | Mira Cards",
+  title: "Wedding Cards in Ahmedabad, Vadodara & Gandhinagar | Mira Cards",
   description:
-    "Premium Wedding Card & Digital Invitation designer in Ahmedabad, Gujarat. Custom luxury Invitation foil stamping, laser-cut designs, Worldwide shipping to India, USA, Australia & beyond. Request a free quote today.",
+    "Custom wedding invitation cards for Ahmedabad, Vadodara and Gandhinagar, with Gujarati kankotri, premium printing, digital invites and international delivery.",
   keywords: [
-    "wedding card maker Ahmedabad",
-    "wedding card maker Gujarat",
-    "wedding invitation maker India",
-    "card making services Ahmedabad",
-    "luxury wedding invitation designer",
-    "wedding cards near me",
-    "digital invitation maker",
-    "video wedding invitation India",
-    "babyshower invitation card maker",
-    "custom wedding stationery Ahmedabad",
+    "wedding cards in Ahmedabad",
+    "wedding invitation cards Ahmedabad",
+    "wedding card manufacturer Ahmedabad",
+    "wedding card designer Ahmedabad",
+    "luxury wedding cards Ahmedabad",
+    "customized wedding cards Ahmedabad",
+    "designer wedding cards Ahmedabad",
+    "wedding invitation designer Ahmedabad",
+    "premium wedding invitation cards",
+    "Indian wedding invitation cards",
+    "wedding card printing Ahmedabad",
+    "wedding invitation printing Ahmedabad",
+    "personalized wedding invitation cards",
+    "exclusive wedding cards Ahmedabad",
+    "best wedding invitation cards Ahmedabad",
+    "luxury wedding invitation cards",
+    "premium wedding cards Ahmedabad",
+    "luxury Indian wedding invitations",
+    "designer wedding invitation cards",
+    "royal wedding invitation cards",
+    "elegant wedding invitation cards",
+    "exclusive wedding invitation designs",
+    "premium box wedding invitations",
+    "luxury wedding card designer",
+    "customized luxury wedding invitations",
+    "Gujarati wedding cards Ahmedabad",
+    "Gujarati kankotri Ahmedabad",
+    "Gujarati wedding invitation cards",
+    "Gujarati marriage invitation cards",
+    "Hindu wedding cards Ahmedabad",
+    "customized Gujarati kankotri",
+    "wedding card design Ahmedabad",
+    "wedding invitation design Ahmedabad",
+    "customized wedding invitation design",
+    "wedding cards in Gujarat",
+    "wedding cards Vadodara",
+    "wedding cards Gandhinagar",
+    "luxury wedding invitations India",
   ],
   alternates: {
     canonical: "https://miracards.in",
@@ -195,8 +225,8 @@ export const metadata: Metadata = {
   },
   openGraph: {
     url: "https://miracards.in",
-   title: "Mira Cards - Luxury Wedding Card & Digital Invitation Designer | Ahmedabad, Gujarat, India | Mira Cards",
-   description: "Premium Wedding Card & Digital Invitation designer in Ahmedabad, Gujarat. Custom luxury Invitation foil stamping, laser-cut designs, Worldwide shipping to India, USA, Australia & beyond. Request a free quote today.",
+  title: "Wedding Cards in Ahmedabad, Vadodara & Gandhinagar | Mira Cards",
+  description: "Custom wedding invitation cards, Gujarati kankotri, premium printing, and digital invites for Gujarat and international customers.",
    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "Mira Cards - Luxury Wedding Card Maker" }],
   },
 };
@@ -215,8 +245,64 @@ export default function HomePage() {
       <ProcessSection />
       <RealWeddings />
       <TestimonialsSection />
+      <section
+        aria-labelledby="ahmedabad-invitations-heading"
+        className="section"
+        style={{ background: "var(--bg-card)", padding: "clamp(3rem, 7vw, 6rem) 0" }}
+      >
+        <div className="container" style={{ maxWidth: "960px" }}>
+          <div style={{ marginBottom: "2rem", textAlign: "center" }}>
+            <span className="section-label">Ahmedabad · Vadodara · Gandhinagar · Worldwide</span>
+            <h2
+              id="ahmedabad-invitations-heading"
+              className="text-section-heading"
+              style={{ color: "var(--text)", marginTop: "0.5rem" }}
+            >
+              Wedding Invitations for Every Kind of Celebration
+            </h2>
+          </div>
+          <div style={{ color: "var(--text-muted)", lineHeight: 1.8, fontSize: "1rem" }}>
+            <p>
+              Planning a wedding in Ahmedabad, Vadodara, or Gandhinagar? Explore custom wedding cards,
+              designer wedding invitations, and wedding card printing with personalized wording and
+              finishes. Compare elegant, premium, and luxury Indian wedding invitations, request a
+              quote, and plan delivery across Gujarat. International customers can enquire about
+              worldwide shipping for their invitation order.
+            </p>
+            <h3 style={{ color: "var(--text)", fontSize: "1.2rem", margin: "1.75rem 0 0.5rem" }}>
+              Gujarati Kankotri, Made Personal
+            </h3>
+            <p>
+              From traditional Gujarati wedding cards, Gujarati marriage invitation cards, and
+              customized Gujarati kankotri to contemporary Hindu wedding cards and Indian marriage
+              invitations, your suite can reflect family traditions alongside your own style. Choose
+              wording, colors, and motifs for engagement invitations and ceremony stationery.
+            </p>
+            <h3 style={{ color: "var(--text)", fontSize: "1.2rem", margin: "1.75rem 0 0.5rem" }}>
+              Premium Materials and Finishing
+            </h3>
+            <p>
+              Explore gold foil wedding invitations, laser-cut wedding cards, acrylic invitations,
+              velvet details, embossed finishes, and customized box wedding cards. Compare handmade,
+              modern, royal-inspired, and traditional designs, including exclusive invitation designs
+              and premium box wedding invitations. Discuss paper, printing, and finishing with a
+              luxury wedding card designer before approving a customized luxury invitation.
+            </p>
+            <h3 style={{ color: "var(--text)", fontSize: "1.2rem", margin: "1.75rem 0 0.5rem" }}>
+              A Coordinated Suite, On Paper or Online
+            </h3>
+            <p>
+              Complete your personalized wedding invitation suite with save-the-date cards, RSVP and
+              itinerary inserts, menus, place cards, thank-you notes, money envelopes, welcome notes,
+              gift tags, stickers, and coordinated gift packaging. Digital wedding invitations and an
+              online RSVP website make it easy to share event updates with guests in India and abroad.
+              We also create designs for baby showers, housewarmings, Vastupujan, and welcome boards.
+              Contact Mira Cards to discuss your guest list, timeline, and delivery location.
+            </p>
+          </div>
+        </div>
+      </section>
       <InquiryCTA />
     </>
   );
 }
-``

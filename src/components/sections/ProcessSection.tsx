@@ -47,7 +47,7 @@ export default function ProcessSection() {
   className="section responsive-section"
   style={{
     background: "var(--bg)",
-    padding: "clamp(2rem, 7vw, 7rem) 0"
+    padding: "clamp(3rem, 7vw, 7rem) 0"
   }}
 >
       <div className="container">
