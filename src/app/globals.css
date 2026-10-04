@@ -295,6 +295,7 @@ body {
   .mobile-story-cards {
     display: flex;
     flex-direction: row;
+    align-items: flex-start;
     overflow-x: auto;
     overflow-y: hidden;
     gap: 1rem;
@@ -322,6 +323,8 @@ body {
     border-radius: var(--radius-card);
     padding: 1.25rem 1rem;
     box-shadow: var(--shadow-sm);
+    align-self: flex-start;
+    height: auto;
   }
 
   .desktop-story-cards {

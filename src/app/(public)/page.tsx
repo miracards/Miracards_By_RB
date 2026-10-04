@@ -299,19 +299,50 @@ export default function HomePage() {
           </div>
 
           <div className="mobile-story-cards" aria-label="Wedding invitation feature slider">
-            <div className="mobile-story-card" style={{ color: "var(--text-muted)", lineHeight: 1.7, fontSize: "0.96rem" }}>
-              <p>
+            <div
+              className="mobile-story-card"
+              style={{
+                color: "var(--text-muted)",
+                lineHeight: 1.7,
+                fontSize: "0.96rem",
+                display: "flex",
+                flexDirection: "column",
+                gap: "0.75rem",
+              }}
+            >
+              <h3
+                style={{
+                  color: "var(--text)",
+                  fontSize: "1.2rem",
+                  margin: 0,
+                  lineHeight: 1.3,
+                }}
+              >
+                Wedding Invitations for Every Kind of Celebration
+              </h3>
+              <p style={{ margin: 0 }}>
                 Planning a wedding in Ahmedabad, Vadodara, or Gandhinagar? Explore custom wedding
                 cards, designer wedding invitations, and wedding card printing with personalized
                 wording and finishes.
               </p>
             </div>
             {storyCards.map((card) => (
-              <div key={card.title} className="mobile-story-card" style={{ color: "var(--text-muted)", lineHeight: 1.7, fontSize: "0.96rem" }}>
-                <h3 style={{ color: "var(--text)", fontSize: "1.1rem", margin: "0 0 0.75rem", lineHeight: 1.4 }}>
+              <div
+                key={card.title}
+                className="mobile-story-card"
+                style={{
+                  color: "var(--text-muted)",
+                  lineHeight: 1.7,
+                  fontSize: "0.96rem",
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: "0.75rem",
+                }}
+              >
+                <h3 style={{ color: "var(--text)", fontSize: "1.1rem", margin: 0, lineHeight: 1.4 }}>
                   {card.title}
                 </h3>
-                <p>{card.description}</p>
+                <p style={{ margin: 0 }}>{card.description}</p>
               </div>
             ))}
           </div>
