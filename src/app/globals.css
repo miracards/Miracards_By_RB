@@ -294,22 +294,17 @@ body {
 @media (max-width: 767px) {
   .mobile-story-cards {
     display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
+    flex-direction: column;
     gap: 1rem;
-    padding-bottom: 0.5rem;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .mobile-story-cards::-webkit-scrollbar {
-    display: none;
+    overflow: visible;
+    scrollbar-width: auto;
+    -ms-overflow-style: auto;
+    -webkit-overflow-scrolling: auto;
   }
 
   .mobile-story-card {
-    flex: 0 0 84%;
-    scroll-snap-align: start;
+    flex: 0 0 auto;
+    width: 100%;
     background: var(--bg-secondary);
     border: 1px solid var(--border-color);
     border-radius: var(--radius-card);
