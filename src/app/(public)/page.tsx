@@ -234,9 +234,9 @@ export const metadata: Metadata = {
 export default function HomePage() {
   const storyCards = [
     {
-      title: "Gujarati Kankotri, Made Personal",
+      title: "A Coordinated Suite, On Paper or Online",
       description:
-        "From traditional Gujarati wedding cards, Gujarati marriage invitation cards, and customized Gujarati kankotri to contemporary Hindu wedding cards and Indian marriage invitations, your suite can reflect family traditions alongside your own style. Choose wording, colors, and motifs for engagement invitations and ceremony stationery.",
+        "Complete your personalized wedding invitation suite with save-the-date cards, RSVP and itinerary inserts, menus, place cards, thank-you notes, money envelopes, welcome notes, gift tags, stickers, and coordinated gift packaging. Digital wedding invitations and an online RSVP website make it easy to share event updates with guests in India and abroad. We also create designs for baby showers, housewarmings, Vastupujan, and welcome boards. Contact Mira Cards to discuss your guest list, timeline, and delivery location.",
     },
     {
       title: "Premium Materials and Finishing",
@@ -244,9 +244,9 @@ export default function HomePage() {
         "Explore gold foil wedding invitations, laser-cut wedding cards, acrylic invitations, velvet details, embossed finishes, and customized box wedding cards. Compare handmade, modern, royal-inspired, and traditional designs, including exclusive invitation designs and premium box wedding invitations. Discuss paper, printing, and finishing with a luxury wedding card designer before approving a customized luxury invitation.",
     },
     {
-      title: "A Coordinated Suite, On Paper or Online",
+      title: "Gujarati Kankotri, Made Personal",
       description:
-        "Complete your personalized wedding invitation suite with save-the-date cards, RSVP and itinerary inserts, menus, place cards, thank-you notes, money envelopes, welcome notes, gift tags, stickers, and coordinated gift packaging. Digital wedding invitations and an online RSVP website make it easy to share event updates with guests in India and abroad. We also create designs for baby showers, housewarmings, Vastupujan, and welcome boards. Contact Mira Cards to discuss your guest list, timeline, and delivery location.",
+        "From traditional Gujarati wedding cards, Gujarati marriage invitation cards, and customized Gujarati kankotri to contemporary Hindu wedding cards and Indian marriage invitations, your suite can reflect family traditions alongside your own style. Choose wording, colors, and motifs for engagement invitations and ceremony stationery.",
     },
   ];
 
