@@ -73,33 +73,33 @@ export default function TestimonialsSection() {
           </div>
 
           {/* ── BOTTOM CTA ─────────────────────────────────────────────── */}
-        <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "1.25rem", paddingTop: "2rem", borderTop: `1px solid ${border}` }}>
-          <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
-            <span style={{ fontSize: "clamp(2.5rem,5vw,3.5rem)", fontWeight: 800, color: navy, lineHeight: 1, fontFamily: "'Playfair Display', serif" }}>5.0</span>
+        <div style={{ display: "flex", flexWrap: "nowrap", alignItems: "center", justifyContent: "space-between", gap: "1rem", paddingTop: "2rem", borderTop: `1px solid ${border}`, overflowX: "auto", WebkitOverflowScrolling: "touch" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "10px", flexShrink: 0 }}>
+            <span style={{ fontSize: "clamp(1.75rem,3vw,2.25rem)", fontWeight: 800, color: navy, lineHeight: 1, fontFamily: "'Playfair Display', serif" }}>5.0</span>
             <div>
               <StarRow count={5} />
-              <p style={{ margin: "5px 0 0", fontSize: "13px", color: muted, fontWeight: 500 }}>Based on {GOOGLE_REVIEWS_COUNT} Google Reviews</p>
+              <p style={{ margin: "3px 0 0", fontSize: "11px", color: muted, fontWeight: 500, whiteSpace: "nowrap" }}>Based on {GOOGLE_REVIEWS_COUNT} Google Reviews</p>
             </div>
           </div>
 
-          <div style={{ display: "flex", flexWrap: "nowrap", gap: "12px", maxWidth: "100%", minWidth: 0, overflowX: "auto" }}>
+          <div style={{ display: "flex", flexWrap: "nowrap", gap: "8px", flexShrink: 0 }}>
             <a href={WRITE_REVIEW_URL} target="_blank" rel="noopener noreferrer"
-              style={{ display: "inline-flex", alignItems: "center", gap: "8px", padding: "13px 26px", borderRadius: "999px", background: "#4285F4", color: "#fff", fontSize: "12px", fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase", textDecoration: "none", boxShadow: "0 4px 16px rgba(66,133,244,0.3)", transition: "all 0.25s", flexShrink: 0, whiteSpace: "nowrap" }}
+              style={{ display: "inline-flex", alignItems: "center", gap: "6px", padding: "10px 14px", borderRadius: "999px", background: "#4285F4", color: "#fff", fontSize: "10px", fontWeight: 700, letterSpacing: "0.04em", textTransform: "uppercase", textDecoration: "none", boxShadow: "0 4px 16px rgba(66,133,244,0.3)", transition: "all 0.25s", flexShrink: 0, whiteSpace: "nowrap" }}
               onMouseEnter={e => { e.currentTarget.style.background = "#3367D6"; e.currentTarget.style.transform = "translateY(-2px)"; }}
               onMouseLeave={e => { e.currentTarget.style.background = "#4285F4"; e.currentTarget.style.transform = "translateY(0)"; }}
             >
               <GoogleG />
               Write a Review
-              <ExternalLink size={13} />
+              <ExternalLink size={12} />
             </a>
 
             <a href={VIEW_REVIEWS_URL} target="_blank" rel="noopener noreferrer"
-              style={{ display: "inline-flex", alignItems: "center", gap: "8px", padding: "13px 26px", borderRadius: "999px", background: "transparent", border: `1.5px solid ${dk ? "rgba(255,255,255,0.2)" : "rgba(11,29,58,0.18)"}`, color: navy, fontSize: "12px", fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase", textDecoration: "none", transition: "all 0.25s", flexShrink: 0, whiteSpace: "nowrap" }}
+              style={{ display: "inline-flex", alignItems: "center", gap: "6px", padding: "10px 14px", borderRadius: "999px", background: "transparent", border: `1.5px solid ${dk ? "rgba(255,255,255,0.2)" : "rgba(11,29,58,0.18)"}`, color: navy, fontSize: "10px", fontWeight: 700, letterSpacing: "0.04em", textTransform: "uppercase", textDecoration: "none", transition: "all 0.25s", flexShrink: 0, whiteSpace: "nowrap" }}
               onMouseEnter={e => { e.currentTarget.style.borderColor = "#C9A227"; e.currentTarget.style.color = "#C9A227"; }}
               onMouseLeave={e => { e.currentTarget.style.borderColor = dk ? "rgba(255,255,255,0.2)" : "rgba(11,29,58,0.18)"; e.currentTarget.style.color = navy; }}
             >
               View All Reviews
-              <ExternalLink size={13} />
+              <ExternalLink size={12} />
             </a>
           </div>
         </div>
