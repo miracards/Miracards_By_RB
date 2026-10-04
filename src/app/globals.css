@@ -299,19 +299,27 @@ body {
     overflow-x: auto;
     overflow-y: hidden;
     gap: 1rem;
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.7rem;
     scroll-snap-type: x proximity;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: thin;
+    scrollbar-color: rgba(201, 162, 39, 0.7) transparent;
   }
 
   .mobile-story-cards::-webkit-scrollbar {
-    height: 6px;
+    height: 7px;
+    background: transparent;
+  }
+
+  .mobile-story-cards::-webkit-scrollbar-track {
+    background: transparent;
   }
 
   .mobile-story-cards::-webkit-scrollbar-thumb {
-    background: rgba(11, 29, 58, 0.2);
+    background: linear-gradient(90deg, rgba(201, 162, 39, 0.9), rgba(47, 109, 181, 0.8));
     border-radius: 999px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
   }
 
   .mobile-story-card {
