@@ -248,6 +248,12 @@ export default function HomePage() {
       description:
         "From traditional Gujarati wedding cards, Gujarati marriage invitation cards, and customized Gujarati kankotri to contemporary Hindu wedding cards and Indian marriage invitations, your suite can reflect family traditions alongside your own style. Choose wording, colors, and motifs for engagement invitations and ceremony stationery.",
     },
+    {
+      title: "  Luxury Wedding Cards & Gujarati Kankotri for Ahmedabad Weddings",
+      description:
+        "Planning a wedding in Ahmedabad, Vadodara, or Gandhinagar? Explore custom wedding cards, designer wedding invitations, and wedding card printing with personalized wording and finishes. Compare elegant, premium, and luxury Indian wedding invitations, request a quote, and plan delivery across Gujarat. International customers can enquire about worldwide shipping for their invitation order.",
+    },
+
   ];
 
   return (
@@ -276,28 +282,11 @@ export default function HomePage() {
               className="text-section-heading"
               style={{ color: "var(--text)", marginTop: "0.5rem" }}
             >
-              Luxury Wedding Cards & Gujarati Kankotri in Ahmedabad
+              Luxury Wedding Cards & Gujarati Kankotri for Ahmedabad Weddings
             </h2>
           </div>
 
-          <div className="desktop-story-cards" style={{ color: "var(--text-muted)", lineHeight: 1.8, fontSize: "1rem" }}>
-            <p>
-              Planning a wedding in Ahmedabad, Vadodara, or Gandhinagar? Explore custom wedding cards,
-              designer wedding invitations, and wedding card printing with personalized wording and
-              finishes. Compare elegant, premium, and luxury Indian wedding invitations, request a
-              quote, and plan delivery across Gujarat. International customers can enquire about
-              worldwide shipping for their invitation order.
-            </p>
-            {storyCards.map((card) => (
-              <div key={card.title}>
-                <h3 style={{ color: "var(--text)", fontSize: "1.2rem", margin: "1.75rem 0 0.5rem" }}>
-                  {card.title}
-                </h3>
-                <p>{card.description}</p>
-              </div>
-            ))}
-          </div>
-
+          
           <div className="mobile-story-cards" aria-label="Wedding invitation feature slider">
             {storyCards.map((card) => (
               <div
