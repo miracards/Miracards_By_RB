@@ -232,6 +232,24 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
+  const storyCards = [
+    {
+      title: "Gujarati Kankotri, Made Personal",
+      description:
+        "From traditional Gujarati wedding cards, Gujarati marriage invitation cards, and customized Gujarati kankotri to contemporary Hindu wedding cards and Indian marriage invitations, your suite can reflect family traditions alongside your own style. Choose wording, colors, and motifs for engagement invitations and ceremony stationery.",
+    },
+    {
+      title: "Premium Materials and Finishing",
+      description:
+        "Explore gold foil wedding invitations, laser-cut wedding cards, acrylic invitations, velvet details, embossed finishes, and customized box wedding cards. Compare handmade, modern, royal-inspired, and traditional designs, including exclusive invitation designs and premium box wedding invitations. Discuss paper, printing, and finishing with a luxury wedding card designer before approving a customized luxury invitation.",
+    },
+    {
+      title: "A Coordinated Suite, On Paper or Online",
+      description:
+        "Complete your personalized wedding invitation suite with save-the-date cards, RSVP and itinerary inserts, menus, place cards, thank-you notes, money envelopes, welcome notes, gift tags, stickers, and coordinated gift packaging. Digital wedding invitations and an online RSVP website make it easy to share event updates with guests in India and abroad. We also create designs for baby showers, housewarmings, Vastupujan, and welcome boards. Contact Mira Cards to discuss your guest list, timeline, and delivery location.",
+    },
+  ];
+
   return (
     <>
       <script
@@ -261,7 +279,8 @@ export default function HomePage() {
               Wedding Invitations for Every Kind of Celebration
             </h2>
           </div>
-          <div style={{ color: "var(--text-muted)", lineHeight: 1.8, fontSize: "1rem" }}>
+
+          <div className="desktop-story-cards" style={{ color: "var(--text-muted)", lineHeight: 1.8, fontSize: "1rem" }}>
             <p>
               Planning a wedding in Ahmedabad, Vadodara, or Gandhinagar? Explore custom wedding cards,
               designer wedding invitations, and wedding card printing with personalized wording and
@@ -269,36 +288,32 @@ export default function HomePage() {
               quote, and plan delivery across Gujarat. International customers can enquire about
               worldwide shipping for their invitation order.
             </p>
-            <h3 style={{ color: "var(--text)", fontSize: "1.2rem", margin: "1.75rem 0 0.5rem" }}>
-              Gujarati Kankotri, Made Personal
-            </h3>
-            <p>
-              From traditional Gujarati wedding cards, Gujarati marriage invitation cards, and
-              customized Gujarati kankotri to contemporary Hindu wedding cards and Indian marriage
-              invitations, your suite can reflect family traditions alongside your own style. Choose
-              wording, colors, and motifs for engagement invitations and ceremony stationery.
-            </p>
-            <h3 style={{ color: "var(--text)", fontSize: "1.2rem", margin: "1.75rem 0 0.5rem" }}>
-              Premium Materials and Finishing
-            </h3>
-            <p>
-              Explore gold foil wedding invitations, laser-cut wedding cards, acrylic invitations,
-              velvet details, embossed finishes, and customized box wedding cards. Compare handmade,
-              modern, royal-inspired, and traditional designs, including exclusive invitation designs
-              and premium box wedding invitations. Discuss paper, printing, and finishing with a
-              luxury wedding card designer before approving a customized luxury invitation.
-            </p>
-            <h3 style={{ color: "var(--text)", fontSize: "1.2rem", margin: "1.75rem 0 0.5rem" }}>
-              A Coordinated Suite, On Paper or Online
-            </h3>
-            <p>
-              Complete your personalized wedding invitation suite with save-the-date cards, RSVP and
-              itinerary inserts, menus, place cards, thank-you notes, money envelopes, welcome notes,
-              gift tags, stickers, and coordinated gift packaging. Digital wedding invitations and an
-              online RSVP website make it easy to share event updates with guests in India and abroad.
-              We also create designs for baby showers, housewarmings, Vastupujan, and welcome boards.
-              Contact Mira Cards to discuss your guest list, timeline, and delivery location.
-            </p>
+            {storyCards.map((card) => (
+              <div key={card.title}>
+                <h3 style={{ color: "var(--text)", fontSize: "1.2rem", margin: "1.75rem 0 0.5rem" }}>
+                  {card.title}
+                </h3>
+                <p>{card.description}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="mobile-story-cards" aria-label="Wedding invitation feature slider">
+            <div className="mobile-story-card" style={{ color: "var(--text-muted)", lineHeight: 1.7, fontSize: "0.96rem" }}>
+              <p>
+                Planning a wedding in Ahmedabad, Vadodara, or Gandhinagar? Explore custom wedding
+                cards, designer wedding invitations, and wedding card printing with personalized
+                wording and finishes.
+              </p>
+            </div>
+            {storyCards.map((card) => (
+              <div key={card.title} className="mobile-story-card" style={{ color: "var(--text-muted)", lineHeight: 1.7, fontSize: "0.96rem" }}>
+                <h3 style={{ color: "var(--text)", fontSize: "1.1rem", margin: "0 0 0.75rem", lineHeight: 1.4 }}>
+                  {card.title}
+                </h3>
+                <p>{card.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

@@ -282,6 +282,46 @@ body {
   font-weight: 500;
   line-height: 1.25;
 }
+
+.mobile-story-cards {
+  display: none;
+}
+
+.desktop-story-cards {
+  display: block;
+}
+
+@media (max-width: 767px) {
+  .mobile-story-cards {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1rem;
+    padding-bottom: 0.5rem;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .mobile-story-cards::-webkit-scrollbar {
+    display: none;
+  }
+
+  .mobile-story-card {
+    flex: 0 0 84%;
+    scroll-snap-align: start;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-card);
+    padding: 1.25rem 1rem;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .desktop-story-cards {
+    display: none;
+  }
+}
+
 .text-label {
   font-family: var(--font-alt);
   font-size: 0.6875rem;
