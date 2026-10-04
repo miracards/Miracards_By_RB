@@ -18,7 +18,7 @@
   --font-inter: var(--font-linux-biolinum), system-ui, sans-serif;
   --font-alt: var(--font-linux-biolinum), system-ui, sans-serif;
   --font-number: var(--font-linux-biolinum), system-ui, sans-serif;
-  --font-signature: var(--font-hearthway-face), var(--font-monsieur-la-doulaise), var(--font-herr-von-muellerhoff), var(--font-great-vibes), cursive;
+  --font-signature: var(--font-hearthway-face), "Segoe Script", "Bradley Hand", cursive;
   --font-logo: var(--font-hearthway-face), var(--font-linux-biolinum), Georgia, serif;
 
   /* - Light Theme Colors - */
