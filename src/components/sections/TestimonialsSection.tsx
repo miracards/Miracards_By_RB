@@ -99,35 +99,37 @@ export default function TestimonialsSection() {
             </p>
           </div>
 
-          {/* Rating pill + nav */}
-          <div style={{ display: "flex", alignItems: "center", gap: "16px", flexWrap: "wrap" }}>
-            {/* Google rating pill */}
-            <a href={VIEW_REVIEWS_URL} target="_blank" rel="noopener noreferrer"
-              style={{ display: "flex", alignItems: "center", gap: "10px", padding: "12px 18px", borderRadius: "12px", background: cardBg, border: `1px solid ${border}`, textDecoration: "none", boxShadow: dk ? "none" : "0 2px 12px rgba(11,29,58,0.07)" }}>
-              <GoogleG />
-              <div>
-                <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-                  <span style={{ fontSize: "22px", fontWeight: 800, color: navy, lineHeight: 1 }}>5.0</span>
-                  <StarRow count={5} />
-                </div>
-                <div style={{ fontSize: "11px", color: muted, marginTop: "3px", fontWeight: 500 }}>{GOOGLE_REVIEWS_COUNT} Google Reviews</div>
-              </div>
-            </a>
-
-            {/* Arrows */}
-            <div style={{ display: "flex", gap: "8px" }}>
-              {[{ dir: -1, Label: "Prev", Icon: ChevronLeft }, { dir: 1, Label: "Next", Icon: ChevronRight }].map(({ dir, Label, Icon }) => (
-                <button key={Label} aria-label={Label}
-                  onClick={() => setActive(p => (p + dir + REVIEWS.length) % REVIEWS.length)}
-                  style={{ width: "44px", height: "44px", borderRadius: "50%", border: `1.5px solid ${border}`, background: cardBg, display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", color: navy, transition: "all 0.2s", flexShrink: 0 }}
-                  onMouseEnter={e => { e.currentTarget.style.borderColor = "#C9A227"; e.currentTarget.style.color = "#C9A227"; }}
-                  onMouseLeave={e => { e.currentTarget.style.borderColor = border; e.currentTarget.style.color = navy; }}
-                >
-                  <Icon size={18} />
-                </button>
-              ))}
+          {/* ── BOTTOM CTA ─────────────────────────────────────────────── */}
+        <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "1.25rem", paddingTop: "2rem", borderTop: `1px solid ${border}` }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
+            <span style={{ fontSize: "clamp(2.5rem,5vw,3.5rem)", fontWeight: 800, color: navy, lineHeight: 1, fontFamily: "'Playfair Display', serif" }}>5.0</span>
+            <div>
+              <StarRow count={5} />
+              <p style={{ margin: "5px 0 0", fontSize: "13px", color: muted, fontWeight: 500 }}>Based on {GOOGLE_REVIEWS_COUNT} Google Reviews</p>
             </div>
           </div>
+
+          <div style={{ display: "flex", flexWrap: "wrap", gap: "12px" }}>
+            <a href={WRITE_REVIEW_URL} target="_blank" rel="noopener noreferrer"
+              style={{ display: "inline-flex", alignItems: "center", gap: "8px", padding: "13px 26px", borderRadius: "999px", background: "#4285F4", color: "#fff", fontSize: "12px", fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase", textDecoration: "none", boxShadow: "0 4px 16px rgba(66,133,244,0.3)", transition: "all 0.25s" }}
+              onMouseEnter={e => { e.currentTarget.style.background = "#3367D6"; e.currentTarget.style.transform = "translateY(-2px)"; }}
+              onMouseLeave={e => { e.currentTarget.style.background = "#4285F4"; e.currentTarget.style.transform = "translateY(0)"; }}
+            >
+              <GoogleG />
+              Write a Review
+              <ExternalLink size={13} />
+            </a>
+
+            <a href={VIEW_REVIEWS_URL} target="_blank" rel="noopener noreferrer"
+              style={{ display: "inline-flex", alignItems: "center", gap: "8px", padding: "13px 26px", borderRadius: "999px", background: "transparent", border: `1.5px solid ${dk ? "rgba(255,255,255,0.2)" : "rgba(11,29,58,0.18)"}`, color: navy, fontSize: "12px", fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase", textDecoration: "none", transition: "all 0.25s" }}
+              onMouseEnter={e => { e.currentTarget.style.borderColor = "#C9A227"; e.currentTarget.style.color = "#C9A227"; }}
+              onMouseLeave={e => { e.currentTarget.style.borderColor = dk ? "rgba(255,255,255,0.2)" : "rgba(11,29,58,0.18)"; e.currentTarget.style.color = navy; }}
+            >
+              View All Reviews
+              <ExternalLink size={13} />
+            </a>
+          </div>
+        </div>
         </div>
 
         {/* ── CARDS ──────────────────────────────────────────────────── */}
@@ -185,37 +187,7 @@ export default function TestimonialsSection() {
           ))}
         </div>
 
-        {/* ── BOTTOM CTA ─────────────────────────────────────────────── */}
-        <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", justifyContent: "space-between", gap: "1.25rem", paddingTop: "2rem", borderTop: `1px solid ${border}` }}>
-          <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
-            <span style={{ fontSize: "clamp(2.5rem,5vw,3.5rem)", fontWeight: 800, color: navy, lineHeight: 1, fontFamily: "'Playfair Display', serif" }}>5.0</span>
-            <div>
-              <StarRow count={5} />
-              <p style={{ margin: "5px 0 0", fontSize: "13px", color: muted, fontWeight: 500 }}>Based on {GOOGLE_REVIEWS_COUNT} Google Reviews</p>
-            </div>
-          </div>
-
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "12px" }}>
-            <a href={WRITE_REVIEW_URL} target="_blank" rel="noopener noreferrer"
-              style={{ display: "inline-flex", alignItems: "center", gap: "8px", padding: "13px 26px", borderRadius: "999px", background: "#4285F4", color: "#fff", fontSize: "12px", fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase", textDecoration: "none", boxShadow: "0 4px 16px rgba(66,133,244,0.3)", transition: "all 0.25s" }}
-              onMouseEnter={e => { e.currentTarget.style.background = "#3367D6"; e.currentTarget.style.transform = "translateY(-2px)"; }}
-              onMouseLeave={e => { e.currentTarget.style.background = "#4285F4"; e.currentTarget.style.transform = "translateY(0)"; }}
-            >
-              <GoogleG />
-              Write a Review
-              <ExternalLink size={13} />
-            </a>
-
-            <a href={VIEW_REVIEWS_URL} target="_blank" rel="noopener noreferrer"
-              style={{ display: "inline-flex", alignItems: "center", gap: "8px", padding: "13px 26px", borderRadius: "999px", background: "transparent", border: `1.5px solid ${dk ? "rgba(255,255,255,0.2)" : "rgba(11,29,58,0.18)"}`, color: navy, fontSize: "12px", fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase", textDecoration: "none", transition: "all 0.25s" }}
-              onMouseEnter={e => { e.currentTarget.style.borderColor = "#C9A227"; e.currentTarget.style.color = "#C9A227"; }}
-              onMouseLeave={e => { e.currentTarget.style.borderColor = dk ? "rgba(255,255,255,0.2)" : "rgba(11,29,58,0.18)"; e.currentTarget.style.color = navy; }}
-            >
-              View All Reviews
-              <ExternalLink size={13} />
-            </a>
-          </div>
-        </div>
+        
       </div>
 
       <style>{`
