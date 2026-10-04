@@ -73,7 +73,7 @@ export default function TestimonialsSection() {
           </div>
 
           {/* ── BOTTOM CTA ─────────────────────────────────────────────── */}
-        <div style={{ display: "flex", flexWrap: "nowrap", alignItems: "center", justifyContent: "space-between", gap: "1rem", paddingTop: "2rem", borderTop: `1px solid ${border}`, overflowX: "auto", WebkitOverflowScrolling: "touch" }}>
+        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: "12px", paddingTop: "2rem", borderTop: `1px solid ${border}` }}>
           <div style={{ display: "flex", alignItems: "center", gap: "10px", flexShrink: 0 }}>
             <span style={{ fontSize: "clamp(1.75rem,3vw,2.25rem)", fontWeight: 800, color: navy, lineHeight: 1, fontFamily: "'Playfair Display', serif" }}>5.0</span>
             <div>
@@ -82,7 +82,7 @@ export default function TestimonialsSection() {
             </div>
           </div>
 
-          <div style={{ display: "flex", flexWrap: "nowrap", gap: "8px", flexShrink: 0 }}>
+          <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "8px", width: "100%", paddingTop: "12px" }}>
             <a href={WRITE_REVIEW_URL} target="_blank" rel="noopener noreferrer"
               style={{ display: "inline-flex", alignItems: "center", gap: "6px", padding: "10px 14px", borderRadius: "999px", background: "#4285F4", color: "#fff", fontSize: "10px", fontWeight: 700, letterSpacing: "0.04em", textTransform: "uppercase", textDecoration: "none", boxShadow: "0 4px 16px rgba(66,133,244,0.3)", transition: "all 0.25s", flexShrink: 0, whiteSpace: "nowrap" }}
               onMouseEnter={e => { e.currentTarget.style.background = "#3367D6"; e.currentTarget.style.transform = "translateY(-2px)"; }}
