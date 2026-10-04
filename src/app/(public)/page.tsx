@@ -276,7 +276,7 @@ export default function HomePage() {
               className="text-section-heading"
               style={{ color: "var(--text)", marginTop: "0.5rem" }}
             >
-              Wedding Invitations for Every Kind of Celebration
+              Luxury Wedding Cards & Gujarati Kankotri in Ahmedabad
             </h2>
           </div>
 
@@ -299,25 +299,6 @@ export default function HomePage() {
           </div>
 
           <div className="mobile-story-cards" aria-label="Wedding invitation feature slider">
-            <div
-              className="mobile-story-card"
-              style={{
-                color: "var(--text-muted)",
-                lineHeight: 1.7,
-                fontSize: "0.96rem",
-                display: "flex",
-                flexDirection: "column",
-                gap: "0.75rem",
-              }}
-            >
-              <p style={{ margin: 0 }}>
-                Planning a wedding in Ahmedabad, Vadodara, or Gandhinagar? Explore custom wedding
-                cards, designer wedding invitations, and wedding card printing with personalized
-                wording and finishes. Compare elegant, premium, and luxury Indian wedding invitations,
-                request a quote, and plan delivery across Gujarat. International customers can enquire
-                about worldwide shipping for their invitation order.
-              </p>
-            </div>
             {storyCards.map((card) => (
               <div
                 key={card.title}
@@ -337,6 +318,25 @@ export default function HomePage() {
                 <p style={{ margin: 0 }}>{card.description}</p>
               </div>
             ))}
+            <div
+              className="mobile-story-card"
+              style={{
+                color: "var(--text-muted)",
+                lineHeight: 1.7,
+                fontSize: "0.96rem",
+                display: "flex",
+                flexDirection: "column",
+                gap: "0.75rem",
+              }}
+            >
+              <p style={{ margin: 0 }}>
+                Planning a wedding in Ahmedabad, Vadodara, or Gandhinagar? Explore custom wedding
+                cards, designer wedding invitations, and wedding card printing with personalized
+                wording and finishes. Compare elegant, premium, and luxury Indian wedding invitations,
+                request a quote, and plan delivery across Gujarat. International customers can enquire
+                about worldwide shipping for their invitation order.
+              </p>
+            </div>
           </div>
         </div>
       </section>
