@@ -1,7 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { useTheme } from "@/components/shared/ThemeProvider";
 
 const REVIEWS = [
@@ -46,40 +45,14 @@ function GoogleG() {
 export default function TestimonialsSection() {
   const { theme } = useTheme();
   const dk = theme === "dark";
-  const [active, setActive] = useState(0);
-  const [cpv, setCpv] = useState(3);
-
-  useEffect(() => {
-    const update = () => {
-      if (window.innerWidth < 640) setCpv(1);
-      else if (window.innerWidth < 1024) setCpv(2);
-      else setCpv(3);
-    };
-    update();
-    window.addEventListener("resize", update);
-    return () => window.removeEventListener("resize", update);
-  }, []);
-
-  useEffect(() => {
-    const t = setInterval(() => {
-      setActive(p => (p + 1) % REVIEWS.length);
-    }, 4500);
-    return () => clearInterval(t);
-  }, []);
-
-  // visible cards = slice of REVIEWS starting at active (wrap around)
-  const visibleCards = Array.from({ length: cpv }, (_, i) =>
-    REVIEWS[(active + i) % REVIEWS.length]
-  );
 
   const navy   = dk ? "#FFFFFF"    : "#0B1D3A";
   const muted  = dk ? "#94A9BC"    : "#6B7280";
-  const cardBg = dk ? "#0F1E2E"    : "#FFFFFF";
   const border = dk ? "rgba(255,255,255,0.09)" : "rgba(11,29,58,0.09)";
   const sectionBg = dk ? "#071321" : "#F8F5F0";
 
   return (
-    <section style={{ background: sectionBg, padding: "clamp(4rem,8vw,6rem) 0" }}>
+    <section style={{ background: sectionBg, padding: "clamp(2rem,8vw,6rem) 0" }}>
       <div style={{ maxWidth: "1300px", margin: "0 auto", padding: "0 clamp(20px,4vw,48px)" }}>
 
         {/* ── HEADER ─────────────────────────────────────────────────── */}
@@ -109,9 +82,9 @@ export default function TestimonialsSection() {
             </div>
           </div>
 
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "12px" }}>
+          <div style={{ display: "flex", flexWrap: "nowrap", gap: "12px", maxWidth: "100%", minWidth: 0, overflowX: "auto" }}>
             <a href={WRITE_REVIEW_URL} target="_blank" rel="noopener noreferrer"
-              style={{ display: "inline-flex", alignItems: "center", gap: "8px", padding: "13px 26px", borderRadius: "999px", background: "#4285F4", color: "#fff", fontSize: "12px", fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase", textDecoration: "none", boxShadow: "0 4px 16px rgba(66,133,244,0.3)", transition: "all 0.25s" }}
+              style={{ display: "inline-flex", alignItems: "center", gap: "8px", padding: "13px 26px", borderRadius: "999px", background: "#4285F4", color: "#fff", fontSize: "12px", fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase", textDecoration: "none", boxShadow: "0 4px 16px rgba(66,133,244,0.3)", transition: "all 0.25s", flexShrink: 0, whiteSpace: "nowrap" }}
               onMouseEnter={e => { e.currentTarget.style.background = "#3367D6"; e.currentTarget.style.transform = "translateY(-2px)"; }}
               onMouseLeave={e => { e.currentTarget.style.background = "#4285F4"; e.currentTarget.style.transform = "translateY(0)"; }}
             >
@@ -121,7 +94,7 @@ export default function TestimonialsSection() {
             </a>
 
             <a href={VIEW_REVIEWS_URL} target="_blank" rel="noopener noreferrer"
-              style={{ display: "inline-flex", alignItems: "center", gap: "8px", padding: "13px 26px", borderRadius: "999px", background: "transparent", border: `1.5px solid ${dk ? "rgba(255,255,255,0.2)" : "rgba(11,29,58,0.18)"}`, color: navy, fontSize: "12px", fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase", textDecoration: "none", transition: "all 0.25s" }}
+              style={{ display: "inline-flex", alignItems: "center", gap: "8px", padding: "13px 26px", borderRadius: "999px", background: "transparent", border: `1.5px solid ${dk ? "rgba(255,255,255,0.2)" : "rgba(11,29,58,0.18)"}`, color: navy, fontSize: "12px", fontWeight: 700, letterSpacing: "0.06em", textTransform: "uppercase", textDecoration: "none", transition: "all 0.25s", flexShrink: 0, whiteSpace: "nowrap" }}
               onMouseEnter={e => { e.currentTarget.style.borderColor = "#C9A227"; e.currentTarget.style.color = "#C9A227"; }}
               onMouseLeave={e => { e.currentTarget.style.borderColor = dk ? "rgba(255,255,255,0.2)" : "rgba(11,29,58,0.18)"; e.currentTarget.style.color = navy; }}
             >
@@ -133,9 +106,9 @@ export default function TestimonialsSection() {
         </div>
 
         {/* ── CARDS ──────────────────────────────────────────────────── */}
-        <div style={{ display: "grid", gridTemplateColumns: `repeat(${cpv}, 1fr)`, gap: "20px", marginBottom: "2rem" }}>
-          {visibleCards.map((r, idx) => (
-            <div key={`${r.id}-${active}-${idx}`}
+        <div style={{ display: "flex", gap: "20px", overflowX: "auto", paddingBottom: "1rem", marginBottom: "2rem", scrollSnapType: "x mandatory", WebkitOverflowScrolling: "touch" }}>
+          {REVIEWS.map((r) => (
+            <div key={r.id}
               className="glass-ios"
               style={{
                 borderRadius: "24px",
@@ -144,6 +117,8 @@ export default function TestimonialsSection() {
                 flexDirection: "column",
                 gap: "1rem",
                 animation: "fadeSlide 0.4s ease forwards",
+                flex: "0 0 clamp(280px, 32vw, 360px)",
+                scrollSnapAlign: "start",
               }}
             >
               {/* Top: avatar + name + Google icon */}
@@ -163,7 +138,7 @@ export default function TestimonialsSection() {
 
               {/* Quote */}
               <p style={{ fontSize: "14.5px", lineHeight: 1.75, color: dk ? "#CBD5E1" : "#374151", margin: 0, flex: 1 }}>
-                "{r.text}"
+                &quot;{r.text}&quot;
               </p>
 
               {/* Verified badge */}
@@ -178,16 +153,6 @@ export default function TestimonialsSection() {
           ))}
         </div>
 
-        {/* ── DOT INDICATORS ─────────────────────────────────────────── */}
-        <div style={{ display: "flex", justifyContent: "center", gap: "6px", marginBottom: "2.5rem" }}>
-          {REVIEWS.map((_, i) => (
-            <button key={i} onClick={() => setActive(i)} aria-label={`Review ${i + 1}`}
-              style={{ width: active === i ? "28px" : "8px", height: "8px", borderRadius: "4px", border: "none", padding: 0, background: active === i ? "#C9A227" : (dk ? "rgba(255,255,255,0.2)" : "rgba(11,29,58,0.15)"), cursor: "pointer", transition: "all 0.35s ease" }}
-            />
-          ))}
-        </div>
-
-        
       </div>
 
       <style>{`
