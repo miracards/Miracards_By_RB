@@ -341,7 +341,7 @@ body {
   }
 
   .mobile-story-card::-webkit-scrollbar {
-    width: 6px;
+    width: 3px;
     background: transparent;
   }
 
