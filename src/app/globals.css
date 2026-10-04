@@ -294,17 +294,29 @@ body {
 @media (max-width: 767px) {
   .mobile-story-cards {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
     gap: 1rem;
-    overflow: visible;
-    scrollbar-width: auto;
-    -ms-overflow-style: auto;
-    -webkit-overflow-scrolling: auto;
+    padding-bottom: 0.5rem;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+  }
+
+  .mobile-story-cards::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .mobile-story-cards::-webkit-scrollbar-thumb {
+    background: rgba(11, 29, 58, 0.2);
+    border-radius: 999px;
   }
 
   .mobile-story-card {
-    flex: 0 0 auto;
-    width: 100%;
+    flex: 0 0 85%;
+    max-width: 85%;
+    scroll-snap-align: start;
     background: var(--bg-secondary);
     border: 1px solid var(--border-color);
     border-radius: var(--radius-card);
