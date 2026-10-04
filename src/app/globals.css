@@ -325,6 +325,8 @@ body {
   .mobile-story-card {
     flex: 0 0 85%;
     max-width: 85%;
+    height: 400px;
+    max-height: 400px;
     scroll-snap-align: start;
     background: var(--bg-secondary);
     border: 1px solid var(--border-color);
@@ -332,7 +334,22 @@ body {
     padding: 1.25rem 1rem;
     box-shadow: var(--shadow-sm);
     align-self: flex-start;
-    height: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(201, 162, 39, 0.7) transparent;
+  }
+
+  .mobile-story-card::-webkit-scrollbar {
+    width: 6px;
+    background: transparent;
+  }
+
+  .mobile-story-card::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, rgba(201, 162, 39, 0.9), rgba(47, 109, 181, 0.8));
+    border-radius: 999px;
+    border: 2px solid transparent;
+    background-clip: padding-box;
   }
 
   .desktop-story-cards {
