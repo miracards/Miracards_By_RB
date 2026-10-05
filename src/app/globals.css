@@ -1203,6 +1203,76 @@ body {
   color: rgba(255, 255, 255, 0.75);
 }
 
+.real-weddings-image-viewport,
+.real-weddings-image-track,
+.real-weddings-image-group {
+  display: contents;
+}
+
+.real-weddings-image-group--duplicate {
+  display: none;
+}
+
+.real-weddings-image-card {
+  position: relative;
+  height: 360px;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@media (max-width: 639px) {
+  .real-weddings-image-viewport {
+    display: block;
+    grid-column: 1 / -1;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .real-weddings-image-track {
+    display: flex;
+    width: max-content;
+    animation: real-weddings-marquee 36s linear infinite;
+  }
+
+  .real-weddings-image-group {
+    display: flex;
+    flex: none;
+    gap: 1rem;
+    padding-right: 1rem;
+  }
+
+  .real-weddings-image-group--duplicate {
+    display: flex;
+  }
+
+  .real-weddings-image-card {
+    flex: 0 0 82vw;
+    height: 280px;
+  }
+
+  .real-weddings-image-viewport:hover .real-weddings-image-track {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes real-weddings-marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .real-weddings-image-track {
+    animation: none;
+  }
+
+  .real-weddings-image-group--duplicate {
+    display: none;
+  }
+}
+
 .dark .mobile-sub-link:hover,
 .dark .mobile-sub-link:focus,
 .dark .mobile-sub-link:active {

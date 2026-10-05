@@ -15,7 +15,7 @@ export default function RealWeddings() {
   return (
     <section className="section" style={{ background: "var(--bg-card)", padding: "6rem 0" }}>
       <div className="container">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+        <div className="real-weddings-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
           {/* Text Title Card (1st Column) */}
           <div
             style={{
@@ -90,40 +90,43 @@ export default function RealWeddings() {
             </Link>
           </div>
 
-          {/* Real Wedding Image Cards (2nd to 5th Columns) */}
-          {IMAGES.map((img, idx) => (
-            <div
-              key={idx}
-              style={{
-                position: "relative",
-                borderRadius: "8px",
-                overflow: "hidden",
-                height: "360px",
-                boxShadow: "0 4px 20px rgba(0,0,0,0.03)",
-                transition: "transform 0.3s ease, box-shadow 0.3s ease",
-              }}
-              className="group cursor-pointer"
-              onMouseEnter={(e) => {
-                const el = e.currentTarget as HTMLElement;
-                el.style.transform = "translateY(-6px)";
-                el.style.boxShadow = "0 12px 30px rgba(0,0,0,0.08)";
-              }}
-              onMouseLeave={(e) => {
-                const el = e.currentTarget as HTMLElement;
-                el.style.transform = "translateY(0)";
-                el.style.boxShadow = "0 4px 20px rgba(0,0,0,0.03)";
-              }}
-            >
-              <Image
-                src={img.src}
-                alt={img.alt}
-                fill
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
-                style={{ objectFit: "cover", transition: "transform 0.5s ease" }}
-                className="group-hover:scale-105"
-              />
+          <div className="real-weddings-image-viewport">
+            <div className="real-weddings-image-track">
+              {[IMAGES, IMAGES].map((imageSet, setIndex) => (
+                <div
+                  key={setIndex}
+                  className={`real-weddings-image-group${setIndex === 1 ? " real-weddings-image-group--duplicate" : ""}`}
+                  aria-hidden={setIndex === 1}
+                >
+                  {imageSet.map((img) => (
+                    <div
+                      key={img.src}
+                      className="real-weddings-image-card group cursor-pointer"
+                      onMouseEnter={(e) => {
+                        const el = e.currentTarget as HTMLElement;
+                        el.style.transform = "translateY(-6px)";
+                        el.style.boxShadow = "0 12px 30px rgba(0,0,0,0.08)";
+                      }}
+                      onMouseLeave={(e) => {
+                        const el = e.currentTarget as HTMLElement;
+                        el.style.transform = "translateY(0)";
+                        el.style.boxShadow = "0 4px 20px rgba(0,0,0,0.03)";
+                      }}
+                    >
+                      <Image
+                        src={img.src}
+                        alt={img.alt}
+                        fill
+                        sizes="(max-width: 639px) 82vw, (max-width: 1024px) 50vw, 20vw"
+                        style={{ objectFit: "cover", transition: "transform 0.5s ease" }}
+                        className="group-hover:scale-105"
+                      />
+                    </div>
+                  ))}
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       </div>
     </section>
