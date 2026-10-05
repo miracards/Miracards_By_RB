@@ -1204,16 +1204,12 @@ body {
 }
 
 .real-weddings-image-viewport,
-.real-weddings-image-track,
-.real-weddings-image-group {
+.real-weddings-image-track {
   display: contents;
 }
 
-.real-weddings-image-group--duplicate {
-  display: none;
-}
-
 .real-weddings-image-card {
+  display: block;
   position: relative;
   height: 360px;
   overflow: hidden;
@@ -1222,50 +1218,85 @@ body {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.real-weddings-image-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+.real-weddings-carousel-arrow,
+.real-weddings-carousel-dots {
+  display: none;
+}
+
 @media (max-width: 639px) {
   .real-weddings-image-viewport {
+    position: relative;
     display: block;
     grid-column: 1 / -1;
     min-width: 0;
     overflow: hidden;
+    touch-action: pan-y;
   }
 
   .real-weddings-image-track {
     display: flex;
-    width: max-content;
-    animation: real-weddings-marquee 20s linear infinite;
-  }
-
-  .real-weddings-image-group {
-    display: flex;
-    flex: none;
-    gap: 1rem;
-    padding-right: 1rem;
-  }
-
-  .real-weddings-image-group--duplicate {
-    display: flex;
+    width: 100%;
+    transition: transform 600ms ease;
+    will-change: transform;
   }
 
   .real-weddings-image-card {
-    flex: 0 0 68vw;
-    height: 280px;
+    flex: 0 0 100%;
+    height: clamp(280px, 65vh, 420px);
   }
 
-}
-
-@media (max-width: 639px) and (hover: hover) and (pointer: fine) {
-  .real-weddings-image-viewport:hover .real-weddings-image-track {
-    animation-play-state: paused;
+  .real-weddings-carousel-arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    display: grid;
+    width: 40px;
+    height: 40px;
+    place-items: center;
+    padding: 0;
+    transform: translateY(-50%);
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    border-radius: 50%;
+    background: rgba(11, 29, 58, 0.72);
+    color: #fff;
   }
-}
 
-@keyframes real-weddings-marquee {
-  to {
+  .real-weddings-carousel-arrow--previous {
+    left: 12px;
+  }
+
+  .real-weddings-carousel-arrow--next {
+    right: 12px;
+  }
+
+  .real-weddings-carousel-dots {
+    position: absolute;
+    bottom: 14px;
+    left: 50%;
+    z-index: 1;
+    display: flex;
+    gap: 8px;
     transform: translateX(-50%);
   }
-}
 
+  .real-weddings-carousel-dots button {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.65);
+  }
+
+  .real-weddings-carousel-dots button[aria-pressed="true"] {
+    background: #fff;
+  }
+}
 
 .dark .mobile-sub-link:hover,
 .dark .mobile-sub-link:focus,

@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 const IMAGES = [
   { src: "/real-wedding-1.png", alt: "Cream and gold foil flatlay wedding card" },
@@ -12,6 +13,32 @@ const IMAGES = [
 ];
 
 export default function RealWeddings() {
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
+  const touchStartX = useRef<number | null>(null);
+  const didSwipe = useRef(false);
+  const swipeClickBlockTimeout = useRef<number | null>(null);
+
+  useEffect(() => {
+    const intervalId = window.setInterval(() => {
+      setActiveImageIndex((index) => (index + 1) % IMAGES.length);
+    }, 5000);
+
+    return () => {
+      window.clearInterval(intervalId);
+      if (swipeClickBlockTimeout.current !== null) {
+        window.clearTimeout(swipeClickBlockTimeout.current);
+      }
+    };
+  }, []);
+
+  const showPreviousImage = () => {
+    setActiveImageIndex((index) => (index - 1 + IMAGES.length) % IMAGES.length);
+  };
+
+  const showNextImage = () => {
+    setActiveImageIndex((index) => (index + 1) % IMAGES.length);
+  };
+
   return (
     <section className="section" style={{ background: "var(--bg-card)", padding: "6rem 0" }}>
       <div className="container">
@@ -90,40 +117,93 @@ export default function RealWeddings() {
             </Link>
           </div>
 
-          <div className="real-weddings-image-viewport">
-            <div className="real-weddings-image-track">
-              {[IMAGES, IMAGES].map((imageSet, setIndex) => (
-                <div
-                  key={setIndex}
-                  className={`real-weddings-image-group${setIndex === 1 ? " real-weddings-image-group--duplicate" : ""}`}
-                  aria-hidden={setIndex === 1}
+          <div
+            className="real-weddings-image-viewport"
+            onTouchStart={(event) => {
+              if (swipeClickBlockTimeout.current !== null) {
+                window.clearTimeout(swipeClickBlockTimeout.current);
+                swipeClickBlockTimeout.current = null;
+              }
+              didSwipe.current = false;
+              touchStartX.current = event.touches[0].clientX;
+            }}
+            onTouchEnd={(event) => {
+              if (touchStartX.current === null) return;
+
+              const swipeDistance = touchStartX.current - event.changedTouches[0].clientX;
+              touchStartX.current = null;
+
+              if (Math.abs(swipeDistance) < 40) return;
+              didSwipe.current = true;
+              swipeClickBlockTimeout.current = window.setTimeout(() => {
+                didSwipe.current = false;
+                swipeClickBlockTimeout.current = null;
+              }, 500);
+              if (swipeDistance > 0) showNextImage();
+              else showPreviousImage();
+            }}
+          >
+            <div
+              id="real-weddings-image-track"
+              className="real-weddings-image-track"
+              style={{ transform: `translateX(-${activeImageIndex * 100}%)` }}
+            >
+              {IMAGES.map((img) => (
+                <Link
+                  key={img.src}
+                  href="/gallery"
+                  aria-label={`View ${img.alt} in the gallery`}
+                  className="real-weddings-image-card group"
+                  onClick={(event) => {
+                    if (!didSwipe.current) return;
+                    event.preventDefault();
+                    didSwipe.current = false;
+                    if (swipeClickBlockTimeout.current !== null) {
+                      window.clearTimeout(swipeClickBlockTimeout.current);
+                      swipeClickBlockTimeout.current = null;
+                    }
+                  }}
                 >
-                  {imageSet.map((img) => (
-                    <div
-                      key={img.src}
-                      className="real-weddings-image-card group cursor-pointer"
-                      onMouseEnter={(e) => {
-                        const el = e.currentTarget as HTMLElement;
-                        el.style.transform = "translateY(-6px)";
-                        el.style.boxShadow = "0 12px 30px rgba(0,0,0,0.08)";
-                      }}
-                      onMouseLeave={(e) => {
-                        const el = e.currentTarget as HTMLElement;
-                        el.style.transform = "translateY(0)";
-                        el.style.boxShadow = "0 4px 20px rgba(0,0,0,0.03)";
-                      }}
-                    >
-                      <Image
-                        src={img.src}
-                        alt={img.alt}
-                        fill
-                        sizes="(max-width: 639px) 68vw, (max-width: 1024px) 50vw, 20vw"
-                        style={{ objectFit: "cover", transition: "transform 0.5s ease" }}
-                        className="group-hover:scale-105"
-                      />
-                    </div>
-                  ))}
-                </div>
+                  <Image
+                    src={img.src}
+                    alt={img.alt}
+                    fill
+                    sizes="(max-width: 639px) 100vw, (max-width: 1024px) 50vw, 20vw"
+                    style={{ objectFit: "cover", transition: "transform 0.5s ease" }}
+                    className="group-hover:scale-105"
+                  />
+                </Link>
+              ))}
+            </div>
+
+            <button
+              type="button"
+              className="real-weddings-carousel-arrow real-weddings-carousel-arrow--previous"
+              onClick={showPreviousImage}
+              aria-label="Show previous wedding image"
+              aria-controls="real-weddings-image-track"
+            >
+              <ArrowLeft size={20} />
+            </button>
+            <button
+              type="button"
+              className="real-weddings-carousel-arrow real-weddings-carousel-arrow--next"
+              onClick={showNextImage}
+              aria-label="Show next wedding image"
+              aria-controls="real-weddings-image-track"
+            >
+              <ArrowRight size={20} />
+            </button>
+
+            <div className="real-weddings-carousel-dots" aria-label="Choose a wedding image">
+              {IMAGES.map((image, index) => (
+                <button
+                  key={image.src}
+                  type="button"
+                  onClick={() => setActiveImageIndex(index)}
+                  aria-label={`Show wedding image ${index + 1}`}
+                  aria-pressed={activeImageIndex === index}
+                />
               ))}
             </div>
           </div>
