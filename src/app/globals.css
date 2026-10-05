@@ -1263,15 +1263,6 @@ body {
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .real-weddings-image-track {
-    animation: none;
-  }
-
-  .real-weddings-image-group--duplicate {
-    display: none;
-  }
-}
 
 .dark .mobile-sub-link:hover,
 .dark .mobile-sub-link:focus,
