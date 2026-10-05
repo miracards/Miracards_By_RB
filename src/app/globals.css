@@ -1233,7 +1233,7 @@ body {
   .real-weddings-image-track {
     display: flex;
     width: max-content;
-    animation: real-weddings-marquee 36s linear infinite;
+    animation: real-weddings-marquee 20s linear infinite;
   }
 
   .real-weddings-image-group {
@@ -1252,6 +1252,9 @@ body {
     height: 280px;
   }
 
+}
+
+@media (max-width: 639px) and (hover: hover) and (pointer: fine) {
   .real-weddings-image-viewport:hover .real-weddings-image-track {
     animation-play-state: paused;
   }
