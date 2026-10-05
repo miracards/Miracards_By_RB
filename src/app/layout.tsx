@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { ThemeProvider } from "@/components/shared/ThemeProvider";
+import MetaPixel from "@/components/shared/MetaPixel";
 
 const linuxBiolinum = localFont({
   src: [
@@ -188,6 +189,7 @@ export default function RootLayout({
           </div>
           {children}
         </ThemeProvider>
+        <MetaPixel />
       </body>
     </html>
   );
