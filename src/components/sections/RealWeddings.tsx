@@ -117,7 +117,7 @@ export default function RealWeddings() {
                         src={img.src}
                         alt={img.alt}
                         fill
-                        sizes="(max-width: 639px) 82vw, (max-width: 1024px) 50vw, 20vw"
+                        sizes="(max-width: 639px) 68vw, (max-width: 1024px) 50vw, 20vw"
                         style={{ objectFit: "cover", transition: "transform 0.5s ease" }}
                         className="group-hover:scale-105"
                       />
