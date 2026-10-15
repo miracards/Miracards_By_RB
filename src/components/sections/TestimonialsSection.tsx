@@ -4,9 +4,18 @@ import { ExternalLink } from "lucide-react";
 import { useTheme } from "@/components/shared/ThemeProvider";
 
 const REVIEWS = [
-  { id: "r1", author: "Khushi Patel", initials: "KP", rating: 5, date: "2 months ago", location: "Surat, Gujarat", text: "Amazing experience with Mira Cards! We ordered our wedding invitations and the quality was absolutely stunning. The gold foil detailing and overall finish was beyond our expectations. Highly recommend!" },
-  { id: "r2", author: "Ravi Shah", initials: "RS", rating: 5, date: "3 months ago", location: "Ahmedabad", text: "Best wedding card designer in Ahmedabad. The team was very professional and understood our requirements perfectly. Delivered on time and the cards looked royal. Our guests were amazed!" },
-  { id: "r3", author: "Priya Mehta", initials: "PM", rating: 5, date: "1 month ago", location: "Gujarat", text: "We got our digital video invitation made from Mira Cards and it was simply breathtaking. Custom caricature design with beautiful background music. Everyone was asking us where we got it from!" },
+  { id: "r13", author: "Ayush Bhosale", initials: "AB", rating: 5, date: "recently", location: "", text: "Best service on time if you need urgent and best quality service in ahemdabad with best price surely you choose Mira cards" },
+  { id: "r14", author: "Arshavi Buch", initials: "AB", rating: 5, date: "recently", location: "", text: "Had a great experience with the team. They were very patient, understood our requirements and helped us despite a short turnaround time. Highly recommend them!" },
+  { id: "r15", author: "Sagar Makwana", initials: "SM", rating: 5, date: "recently", location: "", text: "Great quality, Very fast delivery, On time response\nGreat to have miracards!!" },
+  { id: "r16", author: "bhavik pithadiya", initials: "BP", rating: 5, date: "recently", location: "", text: "Very helpful nature of the team. Amazing design work" },
+  { id: "r17", author: "Mukesh Parmar", initials: "MP", rating: 5, date: "recently", location: "", text: "Awesome work appreciated 👍🏻" },
+  { id: "r18", author: "Asmita Movaliya", initials: "AM", rating: 5, date: "recently", location: "", text: "The paper quality is premium, thick, and has a beautiful texture. The colors printed exactly how they looked on the screen, and the gold foil detailing is flawless. Highly recommend!" },
+  { id: "r12", author: "Jeyash Jiva", initials: "HM", rating: 5, date: "this week", location: "Gujarat", text: "Thank you so much for choosing Mira Cards for your invitation design! It was a pleasure working on your special eventWe hope the design brings a big smile to you and your guestsWishing you all the happiness for the occasionLooking forward to working with you again!" },
+  { id: "r11", author: "Yunay Global Pvt Ltd", initials: "HM", rating: 5, date: "this week", location: "Gujarat", text: "Excellent work on our company card, The design is exactly what we wanted—professional and eye-catching. The team was efficient and delivered a fantastic result. Highly recommend their graphic design services" },
+  { id: "r10", author: "Abhishek Singh Shekhawat" , initials: "HM", rating: 5, date: "this week", location: "Gujarat", text: "I had a wonderful experience! The selection of cards is beautiful and of great quality. The staff are incredibly kind and always ready to help with even the smallest details. Definitely a must-visit shop for cards, envelopes, and more" },
+  { id: "r1", author: "Hiren Bhatt", initials: "KP", rating: 5, date: "2 months ago", location: "Surat, Gujarat", text: "Great service from Mira cards, would definitely recommend." },
+  { id: "r2", author: "Mitesh patel", initials: "RS", rating: 5, date: "3 months ago", location: "Ahmedabad", text: "Very good response and quickly , so many design in invitation card" },
+  { id: "r3", author: "", initials: "PM", rating: 5, date: "1 month ago", location: "Gujarat", text: "We got our digital video invitation made from Mira Cards and it was simply breathtaking. Custom caricature design with beautiful background music. Everyone was asking us where we got it from!" },
   { id: "r4", author: "Nidhi & Karan Desai", initials: "ND", rating: 5, date: "4 months ago", location: "Vadodara", text: "Exceptional quality and service. The laser cut invitation cards were stunning — intricate patterns and premium cardstock. Worth every rupee. Will definitely order again for future events!" },
   { id: "r5", author: "Sanjay Patel", initials: "SP", rating: 5, date: "5 months ago", location: "Surat", text: "Got the box invitation set for our daughter's wedding. It was a masterpiece — the velvet lining, brass emblem and silk ribbon were exactly what we envisioned. Mira Cards truly delivers luxury!" },
   { id: "r6", author: "Anjali Sharma", initials: "AS", rating: 5, date: "2 weeks ago", location: "Mumbai", text: "Mira Cards created the most beautiful baby shower invitation cards for us. The pastel design with custom illustrations was adorable. Fast delivery and very responsive team. 5 stars!" },
@@ -17,7 +26,7 @@ const REVIEWS = [
 
 const WRITE_REVIEW_URL = "https://www.google.com/search?q=Mira+Cards+Ahmedabad+Reviews#lrd=0x395e83707271b725:0x5f21803f4bf8002a,3,,,,";
 const VIEW_REVIEWS_URL = "https://www.google.com/search?q=Mira+Cards+Ahmedabad+Reviews#lrd=0x395e83707271b725:0x5f21803f4bf8002a,2,,,,";
-const GOOGLE_REVIEWS_COUNT = 154; // Original Google Review count for Mira Cards Ahmedabad
+const GOOGLE_REVIEWS_COUNT = 171; // Original Google Review count for Mira Cards Ahmedabad
 
 function StarRow({ count = 5 }: { count?: number }) {
   return (
@@ -128,7 +137,7 @@ export default function TestimonialsSection() {
                 </div>
                 <div style={{ flex: 1, minWidth: 0 }}>
                   <div style={{ fontSize: "15px", fontWeight: 700, color: navy, whiteSpace: "nowrap", overflow: "hidden", textOverflow: "ellipsis" }}>{r.author}</div>
-                  <div style={{ fontSize: "12px", color: muted, marginTop: "2px" }}>{r.location} · {r.date}</div>
+                  <div style={{ fontSize: "12px", color: muted, marginTop: "2px" }}>{r.location ? `${r.location} · ` : ""}{r.date}</div>
                 </div>
                 <GoogleG />
               </div>

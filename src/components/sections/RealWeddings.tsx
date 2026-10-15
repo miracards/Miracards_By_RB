@@ -163,7 +163,7 @@ export default function RealWeddings() {
                       swipeClickBlockTimeout.current = null;
                     }
                   }}
-                >
+                 >
                   <Image
                     src={img.src}
                     alt={img.alt}

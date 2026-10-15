@@ -7,6 +7,14 @@ import { useTheme } from "@/components/shared/ThemeProvider";
 
 const POSTS = [
   {
+    slug: "how-to-choose-perfect-wedding-invitation-card",
+    title: "How to Choose the Perfect Wedding Invitation Card for Your Big Day",
+    excerpt: "A wedding invitation introduces the couple, shares essential details, and reflects family traditions. Choose wedding invitation cards that balance design, readability, budget, and timing.",
+    category: "Wedding Planning",
+    date: "October 15, 2026",
+    image: "/featured-royal.png",
+  },
+  {
     slug: "indian-wedding-card-wording-guide",
     title: "The Ultimate Guide to Indian Wedding Card Wording",
     excerpt: "Struggling with invitation wording? Learn how to structure invitation wording for different ceremonies, parental names, and formal blessings.",
@@ -45,7 +53,7 @@ export default function BlogClient() {
   const dk = theme === "dark";
   const [selectedCat, setSelectedCat] = useState("All");
 
-  const categories = ["All", "Etiquette & Guides", "Design Trends", "Digital Trends", "Materials"];
+  const categories = ["All", "Wedding Planning", "Etiquette & Guides", "Design Trends", "Digital Trends", "Materials"];
 
   const filteredPosts =
     selectedCat === "All" ? POSTS : POSTS.filter((p) => p.category === selectedCat);
