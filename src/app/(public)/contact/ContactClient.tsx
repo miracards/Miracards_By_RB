@@ -293,6 +293,13 @@ export default function ContactClient() {
                     ]
                   },
                   {
+                    name: "Bhesan Branch",
+                    address: "Second Floor, 20 Patel Samaj, Parab Rd, Shri Nath Nagar, Bhesan, Gujarat - 362020",
+                    phones: [
+                      { label: "Phone", value: "+91 97244 20619", href: "tel:+919724420619" }
+                    ]
+                  },
+                  {
                     name: "United Kingdom (UK)",
                     address: "37 Woodfield Avenue, Ha0 3np",
                     phones: [
