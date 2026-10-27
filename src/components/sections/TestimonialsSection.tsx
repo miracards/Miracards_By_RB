@@ -4,6 +4,7 @@ import { ExternalLink } from "lucide-react";
 import { useTheme } from "@/components/shared/ThemeProvider";
 
 const REVIEWS = [
+  { id: "r19", author: "Hitarth Purohit", initials: "HP", rating: 5, date: "recently", location: "", text: "They did extremely timely and a wonderful job for my wedding invitation. I would highly recommend to anyone who wants detailed specifications as they were able to satisfy all of my customization. I really like how well maintained their WhatsApp Business account is. Kudos to you guys." },
   { id: "r13", author: "Ayush Bhosale", initials: "AB", rating: 5, date: "recently", location: "", text: "Best service on time if you need urgent and best quality service in ahemdabad with best price surely you choose Mira cards" },
   { id: "r14", author: "Arshavi Buch", initials: "AB", rating: 5, date: "recently", location: "", text: "Had a great experience with the team. They were very patient, understood our requirements and helped us despite a short turnaround time. Highly recommend them!" },
   { id: "r15", author: "Sagar Makwana", initials: "SM", rating: 5, date: "recently", location: "", text: "Great quality, Very fast delivery, On time response\nGreat to have miracards!!" },
