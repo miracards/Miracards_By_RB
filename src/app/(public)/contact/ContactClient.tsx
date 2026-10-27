@@ -189,7 +189,7 @@ export default function ContactClient() {
                   {
                     icon: <MapPin size={18} color="#C9A227" />,
                     title: "Design Studio",
-                    value: "Gujarat, India",
+                    value: "Ahmedabad, Gujarat, India",
                     href: "#",
                   },
                 ].map((item, idx) => (
@@ -300,7 +300,7 @@ export default function ContactClient() {
                     ]
                   },
                   {
-                    name: "Mira Cards - Bagasara",
+                    name: "Bagasara Branch",
                     address: "4, Shivalik Complex, Opp. Madhuli Hotel, Beside Meghani Highschool, Bagasara - 365440",
                     phones: [
                       { label: "Phone", value: "+91 70464 41365", href: "tel:+917046441365" }
